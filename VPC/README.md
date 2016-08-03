@@ -3,7 +3,6 @@
 ##### VPCを作成してpublic/privateセグメントをきりNATゲートウェイを利用する手順
 
 0. VMデプロイ時に設置する鍵を作成する
- - <Key_name>
 
 1. VPCを作成する
  - 10.0.0.0/16 (VPC)
@@ -15,7 +14,7 @@
  - sub-pri-hy (10.0.1.0/24)
 
 3. Internet-Gatewayを作成する
-  - <Gateway_name>
+  - [Gateway_name]
 
 4. VPCにアタッチする
  - vpc-2a22354f (10.0.0.0/16) | dev_yajima
@@ -25,7 +24,7 @@
   - 10.0.1.0/24 (sub-pri)
  - Create Route Table
   - for-subpub-hy
-   - 0.0.0.0/0 <igw-id>
+   - 0.0.0.0/0 [igw-id]
     - ※ igwからインターネットに抜ける
   - サブネットの関連付けでsub-put-hyをにチェックを入れて保存する
 
