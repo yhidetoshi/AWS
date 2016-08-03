@@ -1,4 +1,4 @@
-## VPC
+## VPC/NATゲートウェイ
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/nat-gateway-diagram.png)
 
