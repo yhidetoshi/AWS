@@ -4,7 +4,7 @@
 
 (画像参考：http://goo.gl/g8Ypxq)
 
-##### VPCを作成してpublic/privateセグメントをきりNATゲートウェイを利用する手順
+##### VPCを作成してpublic/privateセグメントをきりNATゲートウェイを利用する手順メモ
 
 0. VMデプロイ時に設置する鍵を作成する
 
