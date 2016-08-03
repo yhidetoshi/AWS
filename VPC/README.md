@@ -1,4 +1,8 @@
-### VPC
+## VPC
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/nat-gateway-diagram.png)
+
+(画像参考：http://goo.gl/g8Ypxq)
 
 ##### VPCを作成してpublic/privateセグメントをきりNATゲートウェイを利用する手順
 
