@@ -1,0 +1,19 @@
+<source>
+  @type forward
+  port 24224
+</source>
+
+<match nginx.access>
+  @type s3
+  aws_key_id Access-ID
+  aws_sec_key Secret-key
+  s3_bucket bucket_name
+  s3_region ap-northeast-1
+  path log_
+  buffer_path /var/log/td-agent/s3
+  time_slice_format %Y%m%d%H
+  time_slice_wait 10m
+  utc
+  buffer_chunk_limit 256m
+  flush_interval 10s
+</match>
