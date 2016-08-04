@@ -1,0 +1,17 @@
+<source>
+  type tail
+  format ltsv
+  #time_format %Y-%m-%d %H:%M:%S
+  format /^id:(?<id>.+)[\t]*time:\[(?<time>.+)\][\t]*uri:(?<uri>.*)$/
+  path /var/log/nginx/access.log
+  tag nginx.access
+  pos_file /var/log/td-agent/access.log.pos
+</source>
+
+<match nginx.access>
+  @type forward
+  <server>
+    host 10.0.1.100
+    port 24224
+  </server>
+</match>
