@@ -12,6 +12,9 @@
 ### FluentdによるS3へのログ転送
 → https://github.com/yhidetoshi/AWS/tree/master/Fluentd-s3#nginxのaccessログをfluentdでs3に格納する
 
+### AWS-CLI((aws-shell)
+→ https://github.com/yhidetoshi/AWS/blob/master/AWS-CLI/README.md#aws-cliaws-shell
+
 ### Glacierについて
 → https://github.com/yhidetoshi/AWS/tree/master/Glacier#glacierについて
 
