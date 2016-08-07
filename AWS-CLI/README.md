@@ -28,7 +28,7 @@ aws> route53 create-hosted-zone --name <domain_name> --caller-reference 111
 aws> s3 ls
 ```
 
-- Route53にレコードをセットする
+- Route53にAレコードをセットする
   - `aws> route53 change-resource-record-sets --hosted-zone-id <hosted-zone-id> --change-batch file://./a-record-set.json`
 
 **[a-record-set.json]**
