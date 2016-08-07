@@ -27,3 +27,27 @@ aws> route53 create-hosted-zone --name <domain_name> --caller-reference 111
 
 aws> s3 ls
 ```
+
+- Route53にレコードをセットする
+  - `aws> route53 change-resource-record-sets --hosted-zone-id <hosted-zone-id> --change-batch file://./a-record-set.json`
+
+**[a-record-set.json]**
+```
+{
+     "Changes": [
+      {
+        "Action": "CREATE",
+        "ResourceRecordSet": {
+           "Name": "hoge.example.xyz.",
+           "ResourceRecords": [
+              {
+                  "Value": "192.0.2.1"
+              }
+           ],
+           "Type": "A",
+           "TTL": 300
+           }
+         }
+       ]
+}
+```
