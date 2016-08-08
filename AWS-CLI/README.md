@@ -236,7 +236,7 @@ aws> ec2 allocate-address --region ap-northeast-1
   - public-ip
   - region
 
-aws> ec2 associate-address --instance-id i-2ee5eea1 --public-ip <Elastic-ip> --region ap-northeast-1
+aws> ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> --region ap-northeast-1
 {
     "AssociationId": "eipassoc-7ce1f918"
 }
