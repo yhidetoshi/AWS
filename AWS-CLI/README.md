@@ -138,3 +138,106 @@ aws> ec2 create-subnet --vpc-id <vpc-id> --cidr-block 10.0.1.0/24
     }
 }
 ```
+
+▪️ サブネットを削除
+```
+- delete-subnet
+  - subnet-id
+
+aws> ec2 delete-subnet --subnet-id <subnet-id>
+```
+
+▪️インターネットゲートウェイを作成
+```
+- create-internet-gateway
+ - region(not require)
+
+aws> ec2 create-internet-gateway --region ap-northeast-1
+{
+    "InternetGateway": {
+        "Tags": [],
+        "InternetGatewayId": "<igw-id>",
+        "Attachments": []
+    }
+}
+```
+
+
+▪️インターネットゲートウェイをVPCにアタッチする
+```
+- attach-internet-gateway
+  - internet-gateway-id
+  - vac-id
+
+aws> ec2 attach-internet-gateway --internet-gateway-id <igw-id> --vpc-id <vpc-id>
+```
+
+
+▪️ルートテーブルを追加する
+```
+- create-route
+  - route-table-id
+  - destination-cidd-block
+  - gateway-id
+
+aws> ec2 create-route --route-table-id <rtb-id> --destination-cidr-block 0.0.0.0/0 --gateway-id <igw-id>
+{
+    "Return": true
+}
+```
+
+▪️セキュリティグループのグループを作成
+```
+- create-security-group
+  - group-name
+  - description
+
+aws> ec2 create-security-group --group-name SSH --description "for-ssh-g"
+{
+    "GroupId": "<sg-id>"
+}
+```
+
+
+▪️　セキュリティグループのグループにポリシーを追加(Ingress)
+```
+- authorize-security-group-ingress
+ - group-id
+ - protocol
+ - cidr
+
+aws> ec2 authorize-security-group-ingress --group-id <sg-id> --protocol tcp --port 22 --cidr <ip-address/32>
+```
+
+▪️セキュリティグループの削除
+```
+- delete-security-group
+  - group-id
+aws> ec2 delete-security-group --group-id <sg-id>
+```
+
+▪️Elastic-IPの発行
+```
+- allocate-address
+  - region
+
+aws> ec2 allocate-address --region ap-northeast-1
+{
+    "PublicIp": "<Elastic-IP>",
+    "Domain": "vpc",
+    "AllocationId": "eipalloc-0c2e6b69"
+}
+```
+
+▪️Elastic-IPを割り当てる
+```
+- associate-address
+  - instance-id
+  - public-ip
+  - region
+
+aws> ec2 associate-address --instance-id i-2ee5eea1 --public-ip <Elastic-ip> --region ap-northeast-1
+{
+    "AssociationId": "eipassoc-7ce1f918"
+}
+```
