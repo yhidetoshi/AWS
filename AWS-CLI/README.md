@@ -53,7 +53,7 @@ aws> s3 ls
 ```
 
 
-**【インスタンスを1台作成する】**
+**▪️【インスタンスを1台作成する】**
 ```
 - run-instances
   - image-id
@@ -67,3 +67,24 @@ aws> s3 ls
 aws> ec2 run-instances --image-id ami-374db956 --instance-type t2.nano --count 1 --key-name <key-name> --security-group-ids <sg-id> --subnet-id <subnet-id>
 ```
 
+**▪️【インスタンスを停止する】**
+``` 
+- stop-instances
+  - instance-ids
+aws> ec2 stop-instances --instance-ids i-667f5bf9
+{
+    "StoppingInstances": [
+        {
+            "InstanceId": "i-667f5bf9",
+            "CurrentState": {
+                "Code": 64,
+                "Name": "stopping"
+            },
+            "PreviousState": {
+                "Code": 16,
+                "Name": "running"
+            }
+        }
+    ]
+}
+```
