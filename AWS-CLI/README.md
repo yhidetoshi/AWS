@@ -51,3 +51,19 @@ aws> s3 ls
        ]
 }
 ```
+
+
+**【インスタンスを1台作成する】**
+```
+- run-instances
+  - image-id
+  - count
+  - region
+  - instance-type
+  - key-name
+  - security-group-ids
+  - subnet
+
+aws> ec2 run-instances --image-id ami-374db956 --instance-type t2.nano --count 1 --key-name <key-name> --security-group-ids <sg-id> --subnet-id <subnet-id>
+```
+
