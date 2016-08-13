@@ -1,5 +1,10 @@
 # Chef
 
+- 環境
+  - `# cat /etc/system-release`
+    - Amazon Linux AMI release 2016.03
+    - t2.microだとメモリ不足で死んだ...
+    - t2.samll
 
 ### Chef-Serverのインストール
 
