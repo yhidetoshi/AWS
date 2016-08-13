@@ -1,12 +1,17 @@
 # Chef
 
 - 環境
-  - `# cat /etc/system-release`
+  - Chef-Server 
+    - `# cat /etc/system-release`
     - Amazon Linux AMI release 2016.03
     - t2.microだとメモリ不足で死んだ...
     - t2.samll
+  - Workstation
+    - Mac OS
+  - Chef-Client
+    - Amazon Linux AMI release 2016.03
 
-### Chef-Serverのインストール
+### Chef-Serverのインストール(きれいにまとめなおします....)
 
 - Chefの公式サイトからダウンロードする：https://downloads.chef.io/
 ```
@@ -20,3 +25,11 @@
   - `<private_dns>.ap-northeast-1.compute.internal`
 - `hostname`を登録
   - `# hostname <private_dns>.ap-northeast-1.compute.interna` 
+
+
+- Chef-serverのセットアップ
+```
+# chef-server-ctl reconfigure
+# chef-server-ctl test
+```
+
