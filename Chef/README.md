@@ -113,12 +113,6 @@ syntax_check_cache_path  '/root/.chef/syntax_check_cache'
 admin
 ```
 
-**[ユーザ確認]**切り替えた後
-```
-# knife user list
-hyajima
-```
-
 **[Chef-Serverに対するNodeを追加]**
 ```
 # knife bootstrap <target_ip> -x <user> -P <password>
