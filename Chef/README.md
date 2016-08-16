@@ -180,6 +180,7 @@ Chef Client finished, 3/3 resources updated in 03 seconds
 ```
 
 #### Web-UIをインストール/ログイン
+-> runlistにwgetを追加した。
 ```
 # chef-server-ctl install opscode-manage
 # opscode-manage-ctl reconfigure
@@ -192,3 +193,4 @@ Chef Client finished, 3/3 resources updated in 03 seconds
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-login.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-node.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-runlist.png)
