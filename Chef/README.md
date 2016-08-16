@@ -1,5 +1,7 @@
 # Chef12
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-chef-server.png)
+
 - 環境(AWS-VPC)
   - Chef-Server/Workstation
     - `# cat /etc/system-release`
