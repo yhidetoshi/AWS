@@ -174,3 +174,17 @@ Running handlers complete
 Chef Client finished, 3/3 resources updated in 03 seconds
 - - - 
 ```
+
+#### Web-UIをインストール/ログイン
+```
+# chef-server-ctl install opscode-manage
+# opscode-manage-ctl reconfigure
+```
+-　ログイン情報前にアカウントを作った時に指定したユーザ名とパスワードを利用する。
+```
+# chef-server-ctl user-create USER_NAME FIRST_NAME LAST_NAME EMAIL 'PASSWORD' --filename FILE_NAME
+# chef-server-ctl org-create short_name 'full_organization_name' --association_user USER_NAME --filename
+```
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-login.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-web-login.png)
