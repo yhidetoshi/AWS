@@ -191,4 +191,4 @@ Chef Client finished, 3/3 resources updated in 03 seconds
 ```
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-login.png)
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-web-login.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-node.png)
