@@ -1,17 +1,16 @@
-# Chef
+# Chef12
 
 - 環境
-  - Chef-Server 
+  - Chef-Server/Workstation 
     - `# cat /etc/system-release`
     - Amazon Linux AMI release 2016.03
     - t2.microだとメモリ不足で死んだ...
     - t2.samll
-  - Workstation
-    - Mac OS
   - Chef-Client
     - Amazon Linux AMI release 2016.03
+    - t2.micro
 
-### Chef-Serverのインストール(きれいにまとめなおします....)
+### Chef-Server12/knife
 
 - Chefの公式サイトからダウンロードする：https://downloads.chef.io/
 ```
@@ -60,6 +59,8 @@ Starting Pedant Run: 2016-08-16 03:02:08 UTC
                  Config File: /var/opt/opscode/oc-chef-pedant/etc/pedant_config.rb
        HTTP Traffic Log File: /var/log/opscode/oc-chef-pedant/http-traffic.log
 ```
+-> faild 0と出ていれば問題なし
+
 
 Chef12ではchef-server-ctlコマンドで鍵を生成する。マルチテナントに対応している
 ```
@@ -95,4 +96,24 @@ validation_key           '/etc/chef/prod-validator.pem'
 chef_server_url          'https://ip-10-0-0-39.ap-northeast-1.compute.internal/organizations/prod'
 syntax_check_cache_path  '/root/.chef/syntax_check_cache'
 #ssl_verify_mode          :verify_none
+```
+
+**[ユーザ確認]**
+```
+# knife user list
+admin
+```
+
+**[Chef-Serverに対するNodeを追加]**
+```
+# knife bootstrap <target_ip> -x <user> -P <password>
+
+※ Clinet側でchef-server-urlが引けないとconnectionエラーになる
+```
+
+
+**[Node(Client)の確認]**
+```
+# knife node list
+ip-10-0-1-32
 ```
