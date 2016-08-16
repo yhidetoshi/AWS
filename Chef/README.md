@@ -1,14 +1,16 @@
 # Chef12
 
-- 環境
-  - Chef-Server/Workstation 
+- 環境(AWS-VPC)
+  - Chef-Server/Workstation
     - `# cat /etc/system-release`
     - Amazon Linux AMI release 2016.03
     - t2.microだとメモリ不足で死んだ...
     - t2.samll
+    - 10.0.0.39
   - Chef-Client
     - Amazon Linux AMI release 2016.03
     - t2.micro
+    - 10.0.1.32
 
 ### Chef-Server12/knife
 
@@ -116,4 +118,57 @@ admin
 ```
 # knife node list
 ip-10-0-1-32
+```
+
+
+#### Chef-serverのレシピをClientに配布してcookbookを実行する
+```
+(Chef-Server側)
+# export EDITOR=vim
+# knife cookbook upload httpd -o /root/chef-repo/cookbooks
+```
+
+
+```
+# knife node edit ip-10-0-1-32
+- - - 
+{
+  "name": "ip-10-0-1-32",
+  "chef_environment": "_default",
+  "normal": {
+    "tags": [
+
+    ]
+  },
+  "policy_name": null,
+  "policy_group": null,
+  "run_list": [
+  "recipe[httpd]"
+]
+- - - 
+```
+
+#### Client側でapacheをインストールするcookbookを実行
+```
+# chef-client
+- - - 
+Starting Chef Client, version 12.13.37
+resolving cookbooks for run list: ["httpd"]
+Synchronizing Cookbooks:
+  - httpd (0.1.0)
+Installing Cookbook Gems:
+Compiling Cookbooks...
+Converging 2 resources
+Recipe: httpd::default
+  * yum_package[httpd] action install
+    - install version 2.2.31-1.8.amzn1 of package httpd
+  * service[httpd] action enable
+    - enable service service[httpd]
+  * service[httpd] action start
+    - start service service[httpd]
+
+Running handlers:
+Running handlers complete
+Chef Client finished, 3/3 resources updated in 03 seconds
+- - - 
 ```
