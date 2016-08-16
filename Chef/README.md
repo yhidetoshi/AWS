@@ -89,6 +89,8 @@ validation_key         '/etc/chef/validator.pem'
 #ssl_verify_mode        :verify_none
 ```
 
+
+
 【knife.rb】
 ```
 log_level                :info
@@ -102,10 +104,30 @@ syntax_check_cache_path  '/root/.chef/syntax_check_cache'
 #ssl_verify_mode          :verify_none
 ```
 
+**【knife.rb】** orgとユーザを切り替えてみた
+```
+log_level                :info
+log_location             STDOUT
+node_name                'hyajima'
+client_key               '/root/.chef/hyajima.pem'
+validation_client_name   'test-validator'
+validation_key           '/etc/chef/test-validator.pem'
+#chef_server_url          'https://ip-10-0-0-39.ap-northeast-1.compute.internal/organizations/prod'
+chef_server_url          'https://ip-10-0-0-39.ap-northeast-1.compute.internal/organizations/developer'
+syntax_check_cache_path  '/root/.chef/syntax_check_cache'
+ssl_verify_mode          :verify_none
+```
+
 **[ユーザ確認]**
 ```
 # knife user list
 admin
+```
+
+**[ユーザ確認]**切り替えた後
+```
+# knife user list
+hyajima
 ```
 
 **[Chef-Serverに対するNodeを追加]**
