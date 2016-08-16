@@ -68,9 +68,9 @@ Starting Pedant Run: 2016-08-16 03:02:08 UTC
 
 Chef12ではchef-server-ctlコマンドで鍵を生成する。マルチテナントに対応している
 ```
-chef-server-ctl user-create admin hidetoshi yajima <E-mail> '<password>' --filename /root/.chef/admin.pem
+# chef-server-ctl user-create admin hidetoshi yajima <E-mail> '<password>' --filename /root/.chef/admin.pem
 
-chef-server-ctl org-create dev developer --association_user admin --filename /etc/chef/dev-validator.pem
+# chef-server-ctl org-create dev developer --association_user admin --filename /etc/chef/dev-validator.pem
 
 * chef-server-ctlコマンドは別途、調べる
 ```
