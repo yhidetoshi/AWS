@@ -68,8 +68,11 @@ Starting Pedant Run: 2016-08-16 03:02:08 UTC
 
 Chef12ではchef-server-ctlコマンドで鍵を生成する。マルチテナントに対応している
 ```
-# chef-server-ctl user-create admin <First_Name> <Last_name> <E-mail> password --filename /root/.chef/admin.pem
-# chef-server-ctl org-create <Org_name> production --association_user admin --filename /etc/chef/<Org_name>-validator.pem
+chef-server-ctl user-create admin hidetoshi yajima <E-mail> '<password>' --filename /root/.chef/admin.pem
+
+chef-server-ctl org-create dev developer --association_user admin --filename /etc/chef/dev-validator.pem
+
+* chef-server-ctlコマンドは別途、調べる
 ```
 
 - knifeコマンドを使えるように下記を実行する
@@ -96,27 +99,13 @@ validation_key         '/etc/chef/validator.pem'
 log_level                :info
 log_location             STDOUT
 node_name                'admin'
-client_key               '/etc/chef/admin.pem'
-validation_client_name   'prod-validator'
-validation_key           '/etc/chef/prod-validator.pem'
-chef_server_url          'https://ip-10-0-0-39.ap-northeast-1.compute.internal/organizations/prod'
+client_key               '/root/.chef/admin.pem'
+validation_client_name   'dev-validator'
+validation_key           '/etc/chef/dev-validator.pem'
+chef_server_url          'https://ip-10-0-0-168.ap-northeast-1.compute.internal/organizations/dev'
 syntax_check_cache_path  '/root/.chef/syntax_check_cache'
-#ssl_verify_mode          :verify_none
 ```
 
-**【knife.rb】** orgとユーザを切り替えてみた
-```
-log_level                :info
-log_location             STDOUT
-node_name                'hyajima'
-client_key               '/root/.chef/hyajima.pem'
-validation_client_name   'test-validator'
-validation_key           '/etc/chef/test-validator.pem'
-#chef_server_url          'https://ip-10-0-0-39.ap-northeast-1.compute.internal/organizations/prod'
-chef_server_url          'https://ip-10-0-0-39.ap-northeast-1.compute.internal/organizations/developer'
-syntax_check_cache_path  '/root/.chef/syntax_check_cache'
-ssl_verify_mode          :verify_none
-```
 
 **[ユーザ確認]**
 ```
@@ -141,9 +130,8 @@ hyajima
 **[Node(Client)の確認]**
 ```
 # knife node list
-ip-10-0-1-32
+ip-10-0-1-150
 ```
-
 
 #### Chef-serverのレシピをClientに配布してcookbookを実行する
 ```
