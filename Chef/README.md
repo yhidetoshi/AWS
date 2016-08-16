@@ -22,9 +22,11 @@
 
 - 名前解決の周りを設定する
 - `/etc/hosts`にec2のprivate_ipとPublic_dns名を登録。
-  - `<private_dns>.ap-northeast-1.compute.internal`
+  - `ip-10-0-0-39.ap-northeast-1.compute.internal`
 - `hostname`を登録
-  - `# hostname <private_dns>.ap-northeast-1.compute.interna` 
+  - `# hostname ip-10-0-0-39.ap-northeast-1.compute.internal` 
+- `/etc/sysconfig/network`
+  - HOSTNAME=ip-10-0-0-39.ap-northeast-1.compute.internal 
 
 
 - Chef-serverのセットアップ
