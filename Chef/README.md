@@ -1,4 +1,8 @@
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-aws.png)
+
 # Chef12
+
+
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-chef-server.png)
 
