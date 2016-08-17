@@ -11,6 +11,9 @@
 ### FluentdによるS3へのログ転送
 → https://github.com/yhidetoshi/AWS/tree/master/Fluentd-s3#nginxのaccessログをfluentdでs3に格納する
 
+### Chef12によるインスタンス管理
+→ https://github.com/yhidetoshi/AWS/tree/master/Chef#chef12
+
 ### AWS-CLI((aws-shell)
 → https://github.com/yhidetoshi/AWS/blob/master/AWS-CLI/README.md#aws-cliaws-shell
 
