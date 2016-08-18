@@ -1,6 +1,6 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-aws.png)
 
-# Chef12
+# Chef12 / knife-ec2
 
 
 
@@ -198,3 +198,26 @@ Chef Client finished, 3/3 resources updated in 03 seconds
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-login.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-node.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-runlist.png)
+
+
+
+### knife-ec2(とりあえず動いた環境のメモ)
+```
+# gem list | grep knife
+knife-ec2 (0.13.0)
+knife-solo (0.6.0)
+knife-windows (1.5.0)
+```
+
+```
+Rubyはrvmでインストール
+
+# ruby -v
+ruby 2.2.4p230 (2015-12-16 revision 53155) [x86_64-linux]
+
+# which ruby
+/usr/local/rvm/rubies/ruby-2.2.4/bin/ruby
+
+# which gem
+/usr/local/rvm/rubies/ruby-2.2.4/bin/gem
+```
