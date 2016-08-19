@@ -205,3 +205,21 @@ knife ec2 server create (options)
     -y, --yes                        Say yes to all prompts for confirmation
     -h, --help                       Show this message
 ```
+
+- **【インスタンスを削除する】**
+```
+# knife ec2 server delete i-f0d6c67f --region ap-northeast-1
+Instance ID: i-f0d6c67f
+Instance Name: hoge1
+Flavor: t2.micro
+Image: ami-374db956
+Region: ap-northeast-1
+Availability Zone: ap-northeast-1c
+Security Groups: sub-pri-hy
+SSH Key: dev_yajima
+Root Device Type: ebs
+Private DNS Name: ip-10-0-1-141.ap-northeast-1.compute.internal
+Private IP Address: 10.0.1.141
+\n
+Do you really want to delete this server? (Y/N) Y
+```
