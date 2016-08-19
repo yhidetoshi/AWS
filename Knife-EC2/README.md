@@ -1,5 +1,6 @@
 # knife-ec2
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/knife-ec2.png)
 
 ### knife-ec2(動作環境のメモ)
 ```
