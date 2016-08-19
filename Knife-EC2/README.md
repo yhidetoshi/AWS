@@ -1,7 +1,7 @@
-### knife-ec2
+# knife-ec2
 
 
-### knife-ec2(とりあえず動いた環境のメモ)
+### knife-ec2(動作環境のメモ)
 ```
 # gem list | grep knife
 knife-ec2 (0.13.0)
@@ -23,6 +23,10 @@ ruby 2.2.4p230 (2015-12-16 revision 53155) [x86_64-linux]
 ```
 
 ```
+# knife configure
+-> 全てデフォルトでファイルを作成してから下記の通りに編集した。
+
+->ChefのendpointはChef
 # pwd
 /root/.chef
 
@@ -44,3 +48,6 @@ knife[:aws_secret_access_key] = "Secret-key"
 ```
 Instance ID  Name                                    Public IP       Private IP  Flavor    Image         SSH Key        Security Groups  IAM Profile  State
 ```
+
+`# knife ec2 server create --region ap-northeast-1 --availability-zone <AZ> --flavor <instance-type> --image <iam-id> --subnet <subnet-id> --security-group-ids <SG-id> --ssh-key <key-name>`
+
