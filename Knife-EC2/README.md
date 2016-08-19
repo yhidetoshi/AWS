@@ -44,11 +44,15 @@ knife[:aws_access_key_id] = "Access-key"
 knife[:aws_secret_access_key] = "Secret-key"
 ```
 
+- 指定したリージョンのインスタンス一覧を取得
 
 `# knife ec2 server list --region ap-northeast-1`
 ```
 Instance ID  Name                                    Public IP       Private IP  Flavor    Image         SSH Key        Security Groups  IAM Profile  State
 ```
+
+
+- インスタンスをデプロイする
 
 `# knife ec2 server create --region ap-northeast-1 --availability-zone <AZ> --flavor <instance-type> --image <iam-id> --subnet <subnet-id> --security-group-ids <SG-id> --ssh-key <key-name>`
 
