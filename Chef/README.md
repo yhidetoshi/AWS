@@ -131,6 +131,22 @@ admin
 ip-10-0-1-150
 ```
 
+**[knifeコマンドでノード情報を確認できる]**
+```
+# knife node show ip-10-0-1-150
+- - -
+Node Name:   ip-10-0-1-150
+Environment: _default
+FQDN:
+IP:          10.0.1.150
+Run List:    recipe[wget]
+Roles:
+Recipes:     wget, wget::default
+Platform:    amazon 2016.03
+Tags:
+- - -
+```
+
 #### Chef-serverのレシピをClientに配布してcookbookを実行する
 ```
 (Chef-Server側)
