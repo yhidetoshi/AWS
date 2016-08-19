@@ -38,3 +38,9 @@ syntax_check_cache_path  '/root/.chef/syntax_check_cache'
 knife[:aws_access_key_id] = "Access-key"
 knife[:aws_secret_access_key] = "Secret-key"
 ```
+
+
+`# knife ec2 server list --region ap-northeast-1`
+```
+Instance ID  Name   Public IP       Private IP  Flavor    Image         SSH Key        Security Groups  IAM Profile  State
+```
