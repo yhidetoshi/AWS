@@ -1,10 +1,10 @@
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-ci.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-aws.png)
 
 # Chef12 / knife-ec2
 
 
 
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-chef-server.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-ci.png)
 
 - 環境(AWS-VPC)
   - Chef-Server/Workstation
