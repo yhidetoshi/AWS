@@ -43,5 +43,4 @@ knife[:aws_secret_access_key] = "Secret-key"
 `# knife ec2 server list --region ap-northeast-1`
 ```
 Instance ID  Name                                    Public IP       Private IP  Flavor    Image         SSH Key        Security Groups  IAM Profile  State
-i-682f21e7   Chef-Solo-server-yajima                                 10.0.0.199  t2.micro  ami-374db956  dev_yajima     sub-pub-hy                    stopped
 ```
