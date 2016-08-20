@@ -1,4 +1,4 @@
-## VPC/NATゲートウェイ
+## VPC/NATゲートウェイ/NATインスタンス
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/nat-gateway-diagram.png)
 
@@ -49,3 +49,22 @@
 8. NATゲートウェイを作成する
  - sub-pub-hy(publicのサブネットを指定)
    - EIPをセット
+
+### NATインスタンス設定
+```
+- 「インスタンスの選択」 -> 「ネットワーキング」-> 「送信元/送信先の変更チェック」 を 
+「Disable」に設定。
+
+- 「ルートテーブル」-> 「ルート」-> (編集) -> 『送信元 : 0.0.0.0/0』『ターゲット:NATインスタンスID』
+
+# diff /etc/sysctl.conf.default /etc/sysctl.conf
+< net.ipv4.ip_forward = 0
+> net.ipv4.ip_forward = 1
+
+# sysctl -p
+
+# /sbin/iptables -t nat -A POSTROUTING -o eth0 -s 10.0.1.0/24 -j MASQUERADE
+# /etc/init.d/iptables save
+
+- Private-subnetのVMから [ping 8.8.8.8] で確認
+```
