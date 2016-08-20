@@ -6,7 +6,7 @@
 → https://github.com/yhidetoshi/AWS/tree/master/VPC#vpcnatゲートウェイ
 - VPC作成
  - subnet(public/private)
-- IG/NAT-GW
+- IG/NAT-GW/NATインスタンス
 
 ### FluentdによるS3へのログ転送
 → https://github.com/yhidetoshi/AWS/tree/master/Fluentd-s3#nginxのaccessログをfluentdでs3に格納する
