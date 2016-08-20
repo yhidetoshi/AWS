@@ -4,7 +4,7 @@
 
 
 
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-ci.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-nat-chef.png)
 
 - 環境(AWS-VPC)
   - Chef-Server/Workstation
