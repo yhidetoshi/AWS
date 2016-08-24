@@ -215,3 +215,6 @@ Chef Client finished, 3/3 resources updated in 03 seconds
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-node.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-webui-runlist.png)
 
+- Nginx + Jenkinsのレシピを追加してみた(ChefのWebコンパネを利用して)
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-jenkins.png)
