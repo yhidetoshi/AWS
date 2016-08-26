@@ -14,9 +14,14 @@
     - t2.samll
     - 10.0.0.39
   - Chef-Client
+    - t2.micro 
     - Amazon Linux AMI release 2016.03
+  - Nginx
     - t2.micro
-    - 10.0.1.32
+    - CentOS6.8
+  - Ops-Server(Jenkins...etc)
+    - t2.micro
+    - CentOS6.8
 
 ### Chef-Server12/knife
 
