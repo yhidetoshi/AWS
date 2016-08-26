@@ -1,6 +1,6 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-aws.png)
 
-# Chef12 / knife-ec2
+# Chef12
 
 
 
