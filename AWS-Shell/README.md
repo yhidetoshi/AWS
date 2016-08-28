@@ -199,7 +199,7 @@ aws> ec2 create-security-group --group-name SSH --description "for-ssh-g"
 ```
 
 
-▪️　セキュリティグループのグループにポリシーを追加(Ingress)
+▪️ セキュリティグループのグループにポリシーを追加(Ingress)
 ```
 - authorize-security-group-ingress
  - group-id
@@ -207,6 +207,11 @@ aws> ec2 create-security-group --group-name SSH --description "for-ssh-g"
  - cidr
 
 aws> ec2 authorize-security-group-ingress --group-id <sg-id> --protocol tcp --port 22 --cidr <ip-address/32>
+```
+
+▪️ セキュリティグループの参照
+```
+aws> ec2 describe-security-groups --region ap-northeast-1
 ```
 
 ▪️セキュリティグループの削除
