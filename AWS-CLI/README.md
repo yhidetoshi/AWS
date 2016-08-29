@@ -241,3 +241,32 @@ aws> ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> 
     "AssociationId": "eipassoc-7ce1f918"
 }
 ```
+
+
+ `$ aws ec2 describe-instances | jq '.Reservations[].Instances[].Tags[]'`                         
+ ```
+{
+  "Value": "test-drbd-02",
+  "Key": "Name"
+}
+{
+  "Value": "Chef-Solo-server",
+  "Key": "Name"
+}
+{
+  "Value": "Chef12-Server&WebUI",
+  "Key": "Name"
+}
+{
+  "Value": "Ops-Server(Jenkis, chef-knife)",
+  "Key": "Name"
+}
+{
+  "Value": "Nginx-RP",
+  "Key": "Name"
+}
+{
+  "Value": "test-drbd",
+  "Key": "Name"
+}
+```
