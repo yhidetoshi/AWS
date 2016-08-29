@@ -246,10 +246,6 @@ aws> ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> 
  `$ aws ec2 describe-instances | jq '.Reservations[].Instances[].Tags[]'`                         
  ```
 {
-  "Value": "test-drbd-02",
-  "Key": "Name"
-}
-{
   "Value": "Chef-Solo-server",
   "Key": "Name"
 }
@@ -269,4 +265,15 @@ aws> ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> 
   "Value": "test-drbd",
   "Key": "Name"
 }
+```
+
+▪️ Valueだけ表示
+
+`$ aws ec2 describe-instances | jq '.Reservations[].Instances[].Tags[].Value'`
+```
+"Chef-Solo-server"
+"Chef12-Server&WebUI"
+"Ops-Server(Jenkis, chef-knife)"
+"Nginx-RP"
+"test-drbd"
 ```
