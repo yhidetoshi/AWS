@@ -1,4 +1,4 @@
-### AWS-CLI(aws-shell)
+### AWS-CLI(aws-shell) + jq
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-cli-image.png)
 
