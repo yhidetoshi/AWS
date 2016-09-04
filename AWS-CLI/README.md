@@ -2,6 +2,8 @@
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-cli-image.png)
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/jq1.png)
+
 #### aws-cliのインストール
 - 下記のGithubからインストールする
   - 'https://github.com/awslabs/aws-shell'
