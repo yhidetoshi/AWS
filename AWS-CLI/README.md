@@ -9,6 +9,11 @@
   - 'https://github.com/awslabs/aws-shell'
 
 
+#### jqをインストール
+```
+$brew install jq
+```
+
 - 起動方法
 ```
 ~ ❯❯❯ aws-shell
