@@ -1,4 +1,4 @@
-### AWS-CLI(aws-shell) + jq
+### AWS-CLI + jq
 
 
 
@@ -25,8 +25,9 @@ $brew install jq
 $ aws ec2 describe-instances --region ap-northeast-1
 ```
 
-
-aws> ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> --region ap-northeast-1
+▪ EIPを紐付ける
+```
+$ aws ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> --region ap-northeast-1
 {
     "AssociationId": "eipassoc-7ce1f918"
 }
