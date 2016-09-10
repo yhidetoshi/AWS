@@ -23,7 +23,11 @@
 
 #### jqをインストール
 ```
-$brew install jq
+【CentOSの場合】
+$ yum -y install jq
+
+【Macの場合】
+$ brew install jq
 ```
 
 ▪ インスタンス一覧の取得
