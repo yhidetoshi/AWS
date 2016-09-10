@@ -4,7 +4,17 @@
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/jq1.png)
 
-#### aws-cliのインストール
+
+#### aws-CLIのインストール(CentOS6)
+```
+# yum -y install python python-devel --enablerepo=epel
+# yum -y install python-setuptools
+# easy_install pip
+# pip install awscli
+```
+
+
+#### aws-shellのインストール
 - 下記のGithubからインストールする
   - 'https://github.com/awslabs/aws-shell'
 
