@@ -6,13 +6,19 @@
 
 
 #### aws-CLIのインストール(CentOS6)
+- インストール
 ```
 # yum -y install python python-devel --enablerepo=epel
 # yum -y install python-setuptools
 # easy_install pip
 # pip install awscli
 ```
-
+- 鍵をセット
+```
+# export AWS_ACCESS_KEY_ID="access key"
+# export AWS_SECRET_ACCESS_KEY="secret access key"
+# source $HOME/.bash_profile
+```
 
 
 #### jqをインストール
