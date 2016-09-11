@@ -7,3 +7,8 @@
 #### Github連携(サブディレクトリの指定)
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/Jenkins-Github-config-pic.png)
+
+#### Jenkinsのworkspaceを変更
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/Jenkins-change-workspace.png)
+
