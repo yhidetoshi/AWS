@@ -83,6 +83,7 @@ $ aws ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip>
 
 - コマンド
   - `$ curl http://169.254.169.254/latest/meta-data/<下記のメタ情報を指定>`
+  - コマンドを発行するのは、インスタンス自身
 ```
 ami-id
 ami-launch-index
