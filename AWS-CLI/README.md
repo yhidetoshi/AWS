@@ -78,3 +78,35 @@ $ aws ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip>
 "Nginx-RP"
 "test-drbd"
 ```
+
+### Curlでインスタンスのメタ情報取得
+
+- コマンド
+  - `$ curl http://169.254.169.254/latest/meta-data/<下記のメタ情報を指定>`
+```
+ami-id
+ami-launch-index
+ami-manifest-path
+block-device-mapping/
+hostname
+instance-action
+instance-id
+instance-type
+local-hostname
+local-ipv4
+mac
+metrics/
+network/
+placement/
+product-codes
+profile
+public-keys/
+reservation-id
+security-groups
+services/
+```
+- インスタンスタイプの取得例
+```
+$ curl http://169.254.169.254/latest/meta-data/instance-type
+t2.micro
+```
