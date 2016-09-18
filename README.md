@@ -8,6 +8,9 @@
  - subnet(public/private)
 - IG/NAT-GW/NATインスタンス
 
+### インスタンスのメタ情報の取得 
+→ https://github.com/yhidetoshi/AWS/blob/master/AWS-CLI/README.md#curlでインスタンスのメタ情報取得
+
 ### FluentdによるS3へのログ転送
 → https://github.com/yhidetoshi/AWS/tree/master/Fluentd-s3#nginxのaccessログをfluentdでs3に格納する
 
