@@ -84,3 +84,67 @@ Checking out Revision 7f6096eb86870ae5aed3f2dc4d838f6d5a477ec6 (refs/remotes/ori
 }
 Finished: SUCCESS
 ```
+
+## パラメータビルドでinstance-idを指定して開始させる
+
+(流れ)
+```
+(Jenkinsビルド)-->(githubからgit cloneして)-->(AWS-CLIをキック(id指定))-->インスタンス開始
+```
+
+- ビルドパラメータの設定
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-jenkins-buildparameter.png)
+
+- Githubの設定
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/jenkins-start-cli.png)
+
+- ビルド(シェルの実行)の設定
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/jenkins-start-build.png)
+
+- **start-instance.sh**
+
+```
+EC2_ID="$2"
+aws ec2 start-instances --region ap-northeast-1 --instance-ids ${EC2_ID}
+```
+
+
+- Jenkins(コンソール出力結果)
+```
+Started by user yajima
+Building in workspace /var/lib/jenkins/workspace/Start-Instance
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/yhidetoshi/AWS # timeout=10
+Fetching upstream changes from https://github.com/yhidetoshi/AWS
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/yhidetoshi/AWS +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 1b5fc91d1ea6f4a4c42ecbd0bef9564bbca2057b (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1b5fc91d1ea6f4a4c42ecbd0bef9564bbca2057b
+ > git rev-list 1b5fc91d1ea6f4a4c42ecbd0bef9564bbca2057b # timeout=10
+[Start-Instance] $ /bin/sh -xe /tmp/hudson2908850958915652826.sh
++ export WORKSPACE
++ sudo sh -x /var/lib/jenkins/workspace/Start-Instance/Script-For-Jenkins/start-instance.sh --instance-ids i-xxxxxxx
++ EC2_ID=i-xxxxxxx
++ aws ec2 start-instances --region ap-northeast-1 --instance-ids i-xxxxxxx
+{
+    "StartingInstances": [
+        {
+            "InstanceId": "i-xxxxxxx",
+            "CurrentState": {
+                "Code": 0,
+                "Name": "pending"
+            },
+            "PreviousState": {
+                "Code": 80,
+                "Name": "stopped"
+            }
+        }
+    ]
+}
+Finished: SUCCESS
+```
+
