@@ -148,3 +148,53 @@ Checking out Revision 1b5fc91d1ea6f4a4c42ecbd0bef9564bbca2057b (refs/remotes/ori
 Finished: SUCCESS
 ```
 
+## パラメータビルドでinstance-idを指定して削除させる
+※ 設定は他と同じ
+(流れ)
+```
+(Jenkinsビルド)-->(githubからgit cloneして)-->(AWS-CLIをキック(id指定))-->インスタンス削除
+```
+
+- Jenkins(コンソール出力結果)
+```
+Started by user yajima
+Building in workspace /var/lib/jenkins/workspace/Terminate-Instance
+Cloning the remote Git repository
+Cloning repository https://github.com/yhidetoshi/AWS
+ > git init /var/lib/jenkins/workspace/Terminate-Instance # timeout=10
+Fetching upstream changes from https://github.com/yhidetoshi/AWS
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/yhidetoshi/AWS +refs/heads/*:refs/remotes/origin/*
+ > git config remote.origin.url https://github.com/yhidetoshi/AWS # timeout=10
+ > git config --add remote.origin.fetch +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git config remote.origin.url https://github.com/yhidetoshi/AWS # timeout=10
+Fetching upstream changes from https://github.com/yhidetoshi/AWS
+ > git fetch --tags --progress https://github.com/yhidetoshi/AWS +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision 1db0c95da337847e6ce9b65cec20476c0bce75d3 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 1db0c95da337847e6ce9b65cec20476c0bce75d3
+First time build. Skipping changelog.
+[Terminate-Instance] $ /bin/sh -xe /tmp/hudson7271717192559596842.sh
++ export WORKSPACE
++ sudo sh -x /var/lib/jenkins/workspace/Terminate-Instance/Script-For-Jenkins/terminate-instance.sh --instance-ids i-d7534248
++ EC2_ID=i-d7534248
++ aws ec2 terminate-instances --region ap-northeast-1 --instance-ids i-d7534248
+{
+    "TerminatingInstances": [
+        {
+            "InstanceId": "i-d7534248",
+            "CurrentState": {
+                "Code": 32,
+                "Name": "shutting-down"
+            },
+            "PreviousState": {
+                "Code": 16,
+                "Name": "running"
+            }
+        }
+    ]
+}
+Finished: SUCCESS
+```
