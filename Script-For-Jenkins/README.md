@@ -14,6 +14,19 @@
 
 
 
+## Instanceを作成する
+```
+(Jenkinsビルド)-->(githubからgit cloneして)-->(AWS-CLIをキック)-->インスタンス作成
+```
+- ビルド(シェルの実行)の設定
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/Jenkins-change-workspace.png)
+
+**`create-instance.sh`**
+```
+aws ec2 run-instances --image-id ami-374db956 --count 1 --region ap-northeast-1 --instance-type t2.nano
+```
+
+
 ## パラメータビルドでinstance-idを指定して停止させる
 (流れ)
 ```
