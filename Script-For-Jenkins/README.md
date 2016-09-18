@@ -4,17 +4,17 @@
 
 (画像URL:https://goo.gl/P3rhcy)
 
-#### Github連携(サブディレクトリの指定)
+## Github連携(サブディレクトリの指定)
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/Jenkins-Github-config-pic.png)
 
-#### Jenkinsのworkspaceを変更
+### Jenkinsのworkspaceを変更
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/Jenkins-change-workspace.png)
 
 
 
-#### パラメータビルドでinstance-idを指定して停止させる
+## パラメータビルドでinstance-idを指定して停止させる
 (流れ)
 ```
 (Jenkinsビルド)-->(githubからgit cloneして)-->(AWS-CLIをキック(id指定))-->インスタンス停止
