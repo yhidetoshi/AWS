@@ -25,7 +25,15 @@
 - ビルド(シェルの実行)の設定
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-jenkins-stop-build.png)
 
+- シェルスクリプトの中身
 
+**`stop-instance.sh`**
+```
+EC2_ID="$2"
+aws ec2 stop-instances --region ap-northeast-1 --instance-ids ${EC2_ID}
+```
+
+- Jenkins(コンソール出力結果)
 ```
 Started by user yajima
 Building in workspace /var/lib/jenkins/workspace/Stop-Instance
@@ -45,11 +53,11 @@ Checking out Revision 7f6096eb86870ae5aed3f2dc4d838f6d5a477ec6 (refs/remotes/ori
 + export WORKSPACE
 + sudo sh -x /var/lib/jenkins/workspace/Stop-Instance/Script-For-Jenkins/stop-instance.sh --instance-ids i-xxxxxxx
 + EC2_ID=i-xxxxxxx
-+ aws ec2 stop-instances --region ap-northeast-1 --instance-ids i-i-xxxxxxx
++ aws ec2 stop-instances --region ap-northeast-1 --instance-ids i-xxxxxxx
 {
     "StoppingInstances": [
         {
-            "InstanceId": "i-i-xxxxxxx",
+            "InstanceId": "i-xxxxxxx",
             "CurrentState": {
                 "Code": 64,
                 "Name": "stopping"
