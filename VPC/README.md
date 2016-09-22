@@ -69,3 +69,7 @@
 
 - Private-subnetのVMから [ping 8.8.8.8] で確認
 ```
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/vpc-private-dns3.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/vpc-private-dns1.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/vpc-private-dns2.png)
