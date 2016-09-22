@@ -113,4 +113,9 @@ t2.micro
 ```
 
 ### AWS-CLIでユーザデータを読み込む
-`$ aws ec2 run-instances --image-id ami-374db956 --instance-type t2.micro --key-name ${EC2_KEY_NAME} --subnet-id ${SUBNET_ID} --region ap-northeast-1 --security-group-ids ${SECURITY_GROUP_ID} --user-data file:///var/lib/jenkins/workspace/Create-Instance-Nogithub/aws-cli_inputTag.sh`
+```
+$ aws ec2 run-instances --image-id ami-374db956 --instance-type t2.micro --key-name ${EC2_KEY_NAME} --subnet-id ${SUBNET_ID} --region ap-northeast-1 --security-group-ids ${SECURITY_GROUP_ID} --user-data file:///var/lib/jenkins/workspace/Create-Instance-Nogithub/aws-cli_inputTag.sh
+```
+
+- `aws-cli_inputTag.sh`
+  - https://github.com/yhidetoshi/AWS/blob/master/User-Data/aws-cli_inputTag.sh
