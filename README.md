@@ -25,6 +25,9 @@
 ### AWS-CLI((aws-shell)
 → https://github.com/yhidetoshi/AWS/blob/master/AWS-CLI/README.md#aws-cliaws-shell
 
+### userdataの利用
+→ https://github.com/yhidetoshi/AWS/tree/master/User-Data#user-data
+
 ### Glacierについて
 → https://github.com/yhidetoshi/AWS/tree/master/Glacier#glacierについて
 
