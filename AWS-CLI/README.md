@@ -5,7 +5,7 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/jq1.png)
 
 
-#### aws-CLIのインストール(CentOS6)
+### aws-CLIのインストール(CentOS6)
 - インストール
 ```
 # yum -y install python python-devel --enablerepo=epel
@@ -21,7 +21,7 @@
 ```
 
 
-#### jqをインストール
+### jqをインストール
 ```
 【CentOSの場合】
 $ yum -y install jq
@@ -111,3 +111,6 @@ services/
 $ curl http://169.254.169.254/latest/meta-data/instance-type
 t2.micro
 ```
+
+### AWS-CLIでユーザデータを読み込む
+`$ aws ec2 run-instances --image-id ami-374db956 --instance-type t2.micro --key-name ${EC2_KEY_NAME} --subnet-id ${SUBNET_ID} --region ap-northeast-1 --security-group-ids ${SECURITY_GROUP_ID} --user-data file:///var/lib/jenkins/workspace/Create-Instance-Nogithub/aws-cli_inputTag.sh`
