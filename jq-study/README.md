@@ -1,6 +1,6 @@
 ### jqの使い方
 
-`$ cat sample-api.json`
+- `$ cat sample-api.json`
 ```
 {
     "weather201609":
@@ -21,7 +21,7 @@
 }
 ```
 
-`$ cat sample-api.json | jq '.weather201609'`
+- `$ cat sample-api.json | jq '.weather201609'`
 ```
 [
   {
@@ -39,7 +39,7 @@
 ]
 ```
 
-`$ cat sample-api.json | jq '.weather201609[]'`
+- `$ cat sample-api.json | jq '.weather201609[]'`
 ```
 {
   "date": "2016-09-25",
@@ -55,9 +55,17 @@
 }
 ```
 
-`$ cat sample-api.json | jq '.weather201609[] | .date'`
+- `$ cat sample-api.json | jq '.weather201609[] | .date'`
 ```
 "2016-09-25"
 "2016-09-26"
 "2016-09-27"
+```
+
+- `$ cat sample-api.json | jq '.weather201609[] | select(.weather == "rain")'`
+```
+{
+  "date": "2016-09-27",
+  "weather": "rain"
+}
 ```
