@@ -1,13 +1,14 @@
-### User-Data
+## User-Dataとは
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-userdata.jpg)
 
-### AWS-CLI & userdataでやっている事
+## AWS-CLI & userdataでやっている事
 
-Jenkins(https://github.com/yhidetoshi/AWS/tree/master/Script-For-Jenkins)
-からインスタンスを新規作成をビルドすると、AWS-CLIがキックされ、Webコンソールのインスタンスタグに名前と
-VPC内容のRoute53にゾーンを指定してAレコードを作成するUserdataを作成した。
-※ 機能は随時追加中。
+- Jenkins`(https://github.com/yhidetoshi/AWS/tree/master/Script-For-Jenkins)`からビルド。
+- 処理内容
+  - Nameタグに名前を自動入力
+  - Route53のホストゾーンを指定してAレコードに追加
+
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/set-Name-tag.png)
 
