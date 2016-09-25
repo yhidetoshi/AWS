@@ -1,0 +1,17 @@
+{
+    "weather201609":
+  [
+	{
+	    "date":"2016-09-25",
+            "weather":"Sunny"
+	},
+        {
+            "date":"2016-09-26",
+            "weather":"Cloudiness"
+        },
+        {
+            "date":"2016-09-27",
+            "weather":"rain"
+        }
+  ]
+}
