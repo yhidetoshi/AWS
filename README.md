@@ -18,7 +18,8 @@
 
 ### Chef12によるインスタンス管理
 → https://github.com/yhidetoshi/AWS/tree/master/Chef#chef12
--> https://github.com/yhidetoshi/chef_mac
+
+→ https://github.com/yhidetoshi/chef_mac
 
 ### JenkinsからAWS-CLIの実行(Github連携)
 → https://github.com/yhidetoshi/AWS/tree/master/Script-For-Jenkins#jenkins-github連携aws-cli実行用
