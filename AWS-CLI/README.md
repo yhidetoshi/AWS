@@ -35,6 +35,9 @@ $ brew install jq
 $ aws ec2 describe-instances --region ap-northeast-1
 ```
 
+▪ S3へBucketを指定してファイルをGETする。
+aws s3api get-object --bucket <BUCKET_NAME> --key validation.pem /etc/chef/validation.pem
+
 ▪ EIPを紐付ける
 ```
 $ aws ec2 associate-address --instance-id <instance-id> --public-ip <Elastic-ip> --region ap-northeast-1
