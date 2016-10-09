@@ -4,7 +4,7 @@
 
 
 
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-infra-config.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-infra-config2.png)
 
 - 環境(AWS-VPC)
   - Chef-Server/Workstation
