@@ -223,3 +223,54 @@ Chef Client finished, 3/3 resources updated in 03 seconds
 - Nginx + Jenkinsのレシピを追加してみた(ChefのWebコンパネを利用して)
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/chef-jenkins.png)
+
+
+### UserdataからChefクライアントに登録してレシピを自動実行
+
+1. userdataを実行
+2. chef-serverに対してクライアント登録
+3. recipeを実行 ※ 下の例はgitをインストール
+4. デプロイしたインスタンスがクライアント登録とレシピが実行されているかを確認
+
+- `userdata.sh`
+```
+#(これより前のコードは省略)
+curl -L https://www.opscode.com/chef/install.sh | sudo bash
+mkdir /etc/chef
+mkdir /etc/chef/trusted_certs
+
+# s3のバケットにchef-clientに必要なconfigをGETしに行く
+aws s3api get-object --bucket <BUCKET_NAME> --key validation.pem /etc/chef/validation.pem
+aws s3api get-object --bucket <BUCKET_NAME> --key ip-10-0-0-168_ap-northeast-1_compute_internal.crt /etc/chef/trusted_certs/ip-10-0-0-168_ap-northeast-1_compute_internal.crt
+
+
+hostname ${INSTANCE_TAGS}.ap-northeast-1.compute.internal
+echo 10.0.0.168  ip-10-0-0-168.ap-northeast-1.compute.internal >> /etc/hosts
+
+cat <<EOE > /etc/chef/client.rb
+log_location STDOUT
+node_name "${INSTANCE_TAGS}"
+chef_server_url "https://ip-10-0-0-168.ap-northeast-1.compute.internal/organizations/dev"
+validation_client_name "dev-validator"
+EOE
+
+cat <<EOF_ > /etc/chef/first-boot.json
+{"run_list": ["recipe[git]"]}
+EOF_
+
+#chef-client -c /etc/chef/client.rb
+chef-client -j /etc/chef/first-boot.json
+
+```
+
+- Chefサーバのクライアント登録の確認
+```
+# knife node list
+ip-10-0-1-125
+```
+
+- recipeが実行されているかの確認
+```
+# rpm -qa | grep git
+git-2.7.4-1.47.amzn1.x86_64
+```
