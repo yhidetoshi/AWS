@@ -19,6 +19,10 @@
 ### Chef12によるインスタンス管理
 → https://github.com/yhidetoshi/AWS/tree/master/Chef#chef12
 
+- userdataからchef-serverに対してクライアント登録とrecipeの実行
+
+  → https://github.com/yhidetoshi/AWS/blob/master/Chef/README.md#userdataからchefクライアントに登録してレシピを自動実行
+
 (ServerSpecとか)→ https://github.com/yhidetoshi/chef_mac
 
 ### JenkinsからAWS-CLIの実行(Github連携)
