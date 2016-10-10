@@ -1,0 +1,17 @@
+{
+    "HostedZones": [
+        {
+            "ResourceRecordSetCount": 4,
+            "CallerReference": "XXXXXXXXXX-8E77-A872-FD233BE17ECE",
+            "Config": {
+                "Comment": "test for aws-cli by yajima",
+                "PrivateZone": true
+
+
+{
+            },
+            "Id": "/hostedzone/ABCDEFG",
+            "Name": "hoge.com."
+        }
+    ]
+}
