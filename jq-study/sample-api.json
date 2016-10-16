@@ -15,3 +15,25 @@
         }
   ]
 }
+
+
+
+aws route53 list-hosted-zones | jq --arg zone_name ${DOMAIN} -r '.HostedZones[]|select(.Name |contains($zone_name))|.Id' | sed 's/\/hostedzone\///'
+# aws route53 list-hosted-zones
+{
+    "HostedZones": [
+        {
+            "ResourceRecordSetCount": 4,
+            "CallerReference": "XXXXXXXXXX-8E77-A872-FD233BE17ECE",
+            "Config": {
+                "Comment": "test for aws-cli by yajima",
+                "PrivateZone": true
+
+
+{
+            },
+            "Id": "/hostedzone/ABCDEFG",
+            "Name": "hoge.com."
+        }
+    ]
+}
