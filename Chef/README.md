@@ -2,7 +2,9 @@
 
 # Chef12
 
+- 前に作ったChefレシピ等
 
+→https://github.com/yhidetoshi/chef_mac
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-infra-config2.png)
 
