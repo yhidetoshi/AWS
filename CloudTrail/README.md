@@ -22,3 +22,6 @@
     ]
 }
 ```
+
+- 中身を参照する
+  - `$ aws cloudtrail lookup-events`
