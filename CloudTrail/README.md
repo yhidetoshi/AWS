@@ -1,5 +1,9 @@
 ### CloudTrail
 
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-reinvent-2013-report-aws-cloudtrail-1-638.jpg)
+
+
+
 
 - CloudTrailの情報を参照する
   - `$ aws cloudtrail describe-trails --trail-name-list ${TRAIL_NAME}`
