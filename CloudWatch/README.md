@@ -1,3 +1,14 @@
 ### CloudWatch
 
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/Amazon_cloud_watch.jpg)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/cloudwatch-icon.png)
+
+
+
+```
+CPUUtilization <instance_id>
+NetworkIn <instance_id>
+DiskReadOps <instance_id>
+```
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-cloudwatch-metorics.png)
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/cloudwatch-log.png)
