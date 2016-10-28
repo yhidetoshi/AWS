@@ -1,9 +1,5 @@
 ### CloudWatch
-
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/cloudwatch-icon.png)
-
-
-
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/cloudwatch-logo999.png)
 ```
 CPUUtilization <instance_id>
 NetworkIn <instance_id>
