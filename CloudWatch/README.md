@@ -74,3 +74,15 @@ time_zone = LOCAL
 - **実際に登録されているかを確認する**
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/cloudwatch-custom-log.png)
+
+## SNSを使ってCloudWatchからE-mailで通知を飛ばしてみる
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/create-alarm.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/sns-cloudwatch-push.png/)
+
+**通知の部分にSNSで作ったTopicsを選択して通知先を入力する**
+
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/sns-result1.png/)
+
+**【結果】↑ CloudWatchにアラートとして上がり、メールも受信できた**
