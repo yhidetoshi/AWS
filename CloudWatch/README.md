@@ -1,5 +1,7 @@
-### CloudWatch
+### CloudWatch ✖︎ SNS
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/cloudwatch-logo999.png)
+
+
 ```
 (ex)
 CPUUtilization <instance_id>
