@@ -25,6 +25,12 @@
 
 (ServerSpecとか)→ https://github.com/yhidetoshi/chef_mac
 
+### CloudWatch SNS
+→ https://github.com/yhidetoshi/AWS/tree/master/CloudWatch#cloudwatch-︎-sns
+
+### CloudTrail
+→ https://github.com/yhidetoshi/AWS/tree/master/CloudTrail#cloudtrail
+
 ### JenkinsからAWS-CLIの実行(Github連携)
 → https://github.com/yhidetoshi/AWS/tree/master/Script-For-Jenkins#jenkins-github連携aws-cli実行用
 
