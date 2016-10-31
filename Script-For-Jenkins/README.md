@@ -200,6 +200,9 @@ Finished: SUCCESS
 ```
 
 ## Jenkins APIを外部からコールしてビルドする
+-  Jenkinsのリポジトリでも少しまとめてる
+  - https://github.com/yhidetoshi/Jenkins#jenkinsのapiを使って見る
+
 - パラメータ無しビルド
  - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/build`
 
