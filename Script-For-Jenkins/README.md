@@ -206,7 +206,7 @@ Finished: SUCCESS
   - https://github.com/yhidetoshi/Jenkins#jenkinsのapiを使って見る
 
 - **ビルド**
- - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/build`
+ - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-url>/job/<job-name>/build`
 
 - **パラメータ付きビルド**
- - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/buildWithParameters?<parameter_name>=<instance_id>`
+ - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-url>/job/<job-name>/buildWithParameters?<parameter_name>=<instance_id>`
