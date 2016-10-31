@@ -198,3 +198,8 @@ First time build. Skipping changelog.
 }
 Finished: SUCCESS
 ```
+
+## Jenkins APIを外部からコールしてビルドする
+- パラメータ無しビルド
+ - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/build`
+
