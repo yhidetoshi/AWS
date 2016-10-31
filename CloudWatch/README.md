@@ -14,7 +14,7 @@ DiskReadOps <instance_id>
 
 
 
-- **AWS-CLIでCloudwatchのメトリックスを取得する**
+- **AWS-CLIでCloudwatchのメトリクスを取得する**
 ```
 aws cloudwatch get-metric-statistics --metric-name CPUUtilization --start-time 2016-10-27T21:00:00 --end-time 2016-10-28T22:00:00 --period 3600 --namespace AWS/EC2 --statistics Maximum --dimensions Name=InstanceId,Value=<instance-id>
 {
