@@ -8,6 +8,7 @@
 - 処理内容
   - Nameタグに名前を自動入力
   - Route53のホストゾーンを指定してAレコードに追加
+  - Chefサーバへのノード登録
 
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/set-Name-tag.png)
