@@ -207,4 +207,4 @@ Finished: SUCCESS
  - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/build`
 
 - パラメータ付きビルド
- - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/buildWithParameters?INSTANCEID=<instance_id>`
+ - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/buildWithParameters?<parameter_name>=<instance_id>`
