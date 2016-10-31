@@ -203,6 +203,8 @@ Finished: SUCCESS
 -  Jenkinsのリポジトリでも少しまとめてる
   - https://github.com/yhidetoshi/Jenkins#jenkinsのapiを使って見る
 
-- パラメータ無しビルド
+- ビルド
  - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/build`
 
+- パラメータ付きビルド
+ - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/buildWithParameters?INSTANCEID=<instance_id>`
