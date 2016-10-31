@@ -1,4 +1,5 @@
 ## Jenkins Github連携(AWS-CLI実行用)
+## Jenkins APIを外部からコール
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/github-jenkins-icon.png)
 
@@ -200,11 +201,12 @@ Finished: SUCCESS
 ```
 
 ## Jenkins APIを外部からコールしてビルドする
+
 -  Jenkinsのリポジトリでも少しまとめてる
   - https://github.com/yhidetoshi/Jenkins#jenkinsのapiを使って見る
 
-- ビルド
+- **ビルド**
  - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/build`
 
-- パラメータ付きビルド
+- **パラメータ付きビルド**
  - `$ curl -X POST --user <アカウント>:<トークン> http://<jenkins-name>/job/<job-name>/buildWithParameters?<parameter_name>=<instance_id>`
