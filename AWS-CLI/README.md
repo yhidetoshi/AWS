@@ -122,3 +122,35 @@ $ aws ec2 run-instances --image-id ami-374db956 --instance-type t2.micro --key-n
 
 - `aws-cli_inputTag.sh`
   - https://github.com/yhidetoshi/AWS/blob/master/User-Data/aws-cli_inputTag.sh
+
+
+**LBにインスタンスを登録する**
+
+`$ aws elb register-instances-with-load-balancer --load-balancer-name <lb_name> --instances <instance_id>`
+```
+❯❯❯ aws elb register-instances-with-load-balancer --load-balancer-name lb_namexxxx --instances i-xxxxxxxxx
+{
+    "Instances": [
+        {
+            "InstanceId": "i-xxxxxxxxx"
+        }
+    ]
+}
+```
+
+**LBにインスタンスを解除する**
+
+`$ aws elb deregister-instances-from-load-balancer --load-balancer-name <lb_name> --instances <instance_id>`
+```
+❯❯❯ aws elb deregister-instances-from-load-balancer --load-balancer-name LB-xxxxx --instances i-xxxxxxx
+{
+    "Instances": [
+        {
+            "InstanceId": "i-xxxxxxxxxx"
+        },
+        {
+            "InstanceId": "i-xxxxxxxxxx"
+        }
+    ]
+}
+```
