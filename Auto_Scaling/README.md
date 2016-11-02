@@ -9,7 +9,7 @@
 `$ aws autoscaling describe-auto-scaling-groups`
 
 
-**作成済みのASを発動させる**
+**作成済みのASを作成して発動**
 ```
 aws autoscaling create-auto-scaling-group \
         --launch-configuration-name ${AS_LAUNCH_CONFIG_NAME} \
