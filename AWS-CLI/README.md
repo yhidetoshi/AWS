@@ -154,3 +154,19 @@ $ aws ec2 run-instances --image-id ami-374db956 --instance-type t2.micro --key-n
     ]
 }
 ```
+## AutoScaling
+
+**作成済みのASを確認する**
+
+`$ aws autoscaling describe-auto-scaling-groups`
+
+
+**作成済みのASを発動させる**
+```
+$ aws autoscaling create-auto-scaling-group \
+        --launch-configuration-name ${AS_LAUNCH_CONFIG_NAME} \
+        --auto-scaling-group-name ${AS_GROUP_NAME} \
+        --min-size ${AS_GROUP_MIN} \
+        --max-size ${AS_GROUP_MAX} \
+        --vpc-zone-identifier "${VPC_SUBNET_ID}"
+```
