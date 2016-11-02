@@ -1,5 +1,3 @@
-![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-all-icons.jpg)
-
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-fig-998.png)
 
 ## AWSについて
