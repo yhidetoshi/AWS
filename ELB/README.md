@@ -87,6 +87,7 @@ ssl_certificate_key /etc/letsencrypt/live/<My-domain>/privkey.pem;
 5. 証明書の名前は任意
 6. プライベートキーは前に生成した『privkey.pem』を利用
 7. パブリックキー証明書は前に生成した『cert.pem』を利用
+8. あとはLBに適用しているセキュリティグループにHTTPSを許可
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-LB-fig1.png)
 
