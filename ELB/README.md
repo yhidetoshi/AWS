@@ -42,3 +42,38 @@ IMPORTANT NOTES:
 ```
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/LetsEnc-result1.png)
+
+
+- 生成されたLetsEncryptのディレクトリ構成(一部省略)
+```
+letsencrypt/
+├── accounts
+│   └── 
+│       
+├── archive
+│   └── <My-domain>
+│       ├── cert1.pem
+│       ├── chain1.pem
+│       ├── fullchain1.pem
+│       └── privkey1.pem
+├── csr
+│   └── 0000_csr-certbot.pem
+├── keys
+│   └── 0000_key-certbot.pem
+├── live
+│   └── jenkins.hidetoshi.xyz
+│       ├── cert.pem -> ../../archive/<My-domain>/cert1.pem
+│       ├── chain.pem -> ../../archive/<My-domain>/chain1.pem
+│       ├── fullchain.pem -> ../../archive/<My-domain>/fullchain1.pem
+│       └── privkey.pem -> ../../archive/<My-domain>/privkey1.pem
+└── renewal
+    └── <My-domain>.conf
+```
+
+
+- Nginxの設定で生成された証明書を利用するように変更する
+```
+isten 443 ssl;
+ssl_certificate /etc/letsencrypt/live/<My-domain>/fullchain.pem;
+ssl_certificate_key /etc/letsencrypt/live/<My-domain>/privkey.pem;
+```
