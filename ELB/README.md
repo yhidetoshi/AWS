@@ -77,3 +77,11 @@ isten 443 ssl;
 ssl_certificate /etc/letsencrypt/live/<My-domain>/fullchain.pem;
 ssl_certificate_key /etc/letsencrypt/live/<My-domain>/privkey.pem;
 ```
+
+- インスタンス側のSSL設定が完了したので、次にLB側のSSL設定を実施する
+
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-LB-fig1.png)
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-LB-input-key.png)
+
