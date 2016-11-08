@@ -179,3 +179,18 @@ aws autoscaling describe-scaling-activities \
         --auto-scaling-group-name ${AS_GROUP_NAME} \
         --max-items ${MAX_ITEMS}
 ```
+
+### ELBにインスタンスが関連付けされているかの確認
+`aws elb describe-instance-health --load-balancer-name <LB_Name> --region ap-northeast-1 --instances <instance-id>`
+```
+{
+    "InstanceStates": [
+        {
+            "InstanceId": "i-xxxxxxxxxxxxx",
+            "ReasonCode": "Instance",
+            "State": "OutOfService",
+            "Description": "Instance is not currently registered with the LoadBalancer."
+        }
+    ]
+}
+```
