@@ -4,6 +4,8 @@
 
 - installメモ
  - 環境：CentOS release 6.8 (Final)
+ - 既存Nginxからリバプロ接続(NginxでSSL終端)
+ 
 ```
 # yum install curl openssh-server openssh-clients postfix cronie
 # service postfix start
