@@ -21,10 +21,11 @@
  - time_zone
  - GitLab Unicorn
  - GitLab PostgreSQL
---> configは `https://github.com/yhidetoshi/AWS/blob/master/Gitlab/gitlab.rb` に設定
+ 
+--> configは https://github.com/yhidetoshi/AWS/blob/master/Gitlab/gitlab.rb
 
 - 既存Nginxのリバプロ設定
-  - 
+  - https://github.com/yhidetoshi/AWS/blob/master/Gitlab/gitlab.conf
 
 - 設定をembeddedのChefが実行されて処理される
 ```
