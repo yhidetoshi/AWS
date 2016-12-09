@@ -13,7 +13,7 @@ echo 'aws_secret_access_key = <aws_secret_access_key>' >> /root/.aws/credentials
 RETRY_LIMIT=10
 RETRY_COUNT=0
 RETRY_SLEEP=2
-DOMAIN="dev.yajima"
+DOMAIN="domain.dev"
 
 # yum install jq
 
