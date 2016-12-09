@@ -20,6 +20,31 @@
 # source $HOME/.bash_profile
 ```
 
+#### 複数のアカウントを使用するときは下記のように設定する
+**[.aws/config]**
+```
+[default]
+output = json
+[profile new_name]
+output = json
+region = ap-northeast-1
+```
+
+**[.aws/credentials]**
+```
+[default]
+aws_access_key_id = AWS_ACCESS_KEY_ID
+aws_secret_access_key = AWS_SECRET_ACCESS_KEY
+[new_name]
+aws_access_key_id = AWS_ACCESS_KEY_ID
+aws_secret_access_key = AWS_SECRET_ACCESS_KEY
+```
+**コマンドを実行するときの引数( --profile setting_name)**
+```
+$ aws ec2 describe-instances --profile new_name
+```
+
+
 
 ### jqをインストール
 ```
