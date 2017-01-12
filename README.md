@@ -3,6 +3,8 @@
 ### サーバレスアーキテクチャ(IoT)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-iot-fig2.png)
 
+
+### 検証内容
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-fig990.png)
 
 
