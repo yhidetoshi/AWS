@@ -1,6 +1,11 @@
+## AWSについて
+
+### サーバレスアーキテクチャ(IoT)
+![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-iot-fig2.png)
+
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-fig990.png)
 
-## AWSについて
+
 
 ### VPC
 → https://github.com/yhidetoshi/AWS/tree/master/VPC#vpcnatゲートウェイ
