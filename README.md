@@ -1,6 +1,6 @@
 ## AWSについて
 
-### サーバレスアーキテクチャ(IoT)
+### サーバレスアーキテクチャ(IoT)　実施した構成図
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-iot-fig2.png)
 
 
