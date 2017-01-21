@@ -1,6 +1,6 @@
 import boto3
  
-TOPIC_ARN = 'arn:aws:sns:ap-northeast-1:XXXXXXXXXX:Check-Instance'
+TOPIC_ARN = 'arn:aws:sns:ap-northeast-1:XXXXXXXX:Check-Instance'
 
 
 def lambda_handler(event, context):
@@ -30,10 +30,36 @@ def lambda_handler(event, context):
         if not ec2_count_stopped == 0:
             send_message.append("[ EC2 is stopped! ]")
             for n in range(0, ec2_count_stopped):
-                send_message.append(ec2_response_stopped['Reservations'][n]['Instances'][0]['Tags'][0]['Value'])  
+                send_message.append(ec2_response_stopped['Reservations'][n]['Instances'][0]['Tags'][0]['Value'])
+                #send_message.append(1,instance_stopped)  
             send_message.append(" ")
  
-    
+        ## count by size
+        ec2_t2_nano = ec2.describe_instances(Filters=[{'Name':'instance-type','Values':['t2.nano']}])
+        ec2_t2_micro = ec2.describe_instances(Filters=[{'Name':'instance-type','Values':['t2.micro']}])
+        ec2_t2_med = ec2.describe_instances(Filters=[{'Name':'instance-type','Values':['t2.medium']}])
+
+        t2_nano_count_ = len(ec2_t2_nano['Reservations'])
+        t2_micro_count_ = len(ec2_t2_micro['Reservations'])
+        t2_med_count_ = len(ec2_t2_med['Reservations'])
+
+        if t2_nano_count_ > 0:
+            send_message.append("[t2.nano]")
+            t2_nano_count = str(t2_nano_count_)
+            send_message.append(t2_nano_count)
+
+        if t2_micro_count_ > 0:
+            send_message.append("[t2.micro]")
+            t2_micro_count = str(t2_micro_count_)
+            send_message.append(t2_micro_count)
+
+        if t2_med_count_ > 0:
+            send_message.append("[t2.medium]")
+            t2_med_count = str(t2_med_count_)
+            send_message.append(t2_med_count)
+        
+        send_message.append(" ")
+        
         # Check for ELB 
         elb = boto3.client('elb')
         elb_response = elb.describe_load_balancers()
