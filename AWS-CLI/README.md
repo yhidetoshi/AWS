@@ -220,6 +220,6 @@ aws autoscaling describe-scaling-activities \
 }
 ```
 
-### サーバ側とs3側で同期をとる
+### サーバ側とs3側で同期をとる(ディレクトリも問題なし)
 
 `$ aws s3 sync Local_dir s3://Bucket_Name --profile yajima`
