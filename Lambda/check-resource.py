@@ -1,6 +1,6 @@
 import boto3
  
-TOPIC_ARN = 'arn:aws:sns:ap-northeast-1:XXXXXXXX:Check-Instance'
+TOPIC_ARN = 'arn:aws:sns:ap-northeast-1:XXXXXXXXX:Check-Resource'
 
 
 def lambda_handler(event, context):
@@ -20,7 +20,7 @@ def lambda_handler(event, context):
  
         ## Status is Running
         if not ec2_count == 0:
-            send_message.append("[ EC2 is running! ]")
+            send_message.append("[ EC2 Running ]")
             for i in range(0, ec2_count):
                 instance = ec2_response['Reservations'][i]['Instances'][0]['Tags'][0]['Value']
                 send_message.insert(1,instance)  
@@ -28,7 +28,7 @@ def lambda_handler(event, context):
 
         ## Status is Stopped
         if not ec2_count_stopped == 0:
-            send_message.append("[ EC2 is stopped! ]")
+            send_message.append("[ EC2 Stopped ]")
             for n in range(0, ec2_count_stopped):
                 send_message.append(ec2_response_stopped['Reservations'][n]['Instances'][0]['Tags'][0]['Value'])
                 #send_message.append(1,instance_stopped)  
@@ -66,7 +66,7 @@ def lambda_handler(event, context):
         elb_count = len(elb_response['LoadBalancerDescriptions'])
  
         if not elb_count == 0:
-            send_message.append("[ ELB is running! ]")
+            send_message.append("[ ELB Running ]")
             for i in range(0, elb_count):
                 send_message.append(elb_response['LoadBalancerDescriptions'][i]['LoadBalancerName'])
             send_message.append(" ")
@@ -77,10 +77,18 @@ def lambda_handler(event, context):
         rds_count = len(rds_response['DBInstances'])
  
         if not rds_count == 0:
-            send_message.append("[RDS is running!]")
+            send_message.append("[RDS Running!]")
             for i in range(0, rds_count):
                 send_message.append(rds_response['DBInstances'][i]['DBInstanceIdentifier'])
             send_message.append(" ")
+        
+        # Get s3 Bucket List
+        s3 = boto3.resource('s3')
+        send_message.append("[ s3 Bucket Using]")
+        for bucket in s3.buckets.all():
+            if bucket.name.startswith(""):
+                #print bucket.name
+                send_message.append(bucket.name)
         
         # Send mail
         send_subject = "[Amazon Web Service] Check-Resource by Lambda"           
