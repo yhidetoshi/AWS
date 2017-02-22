@@ -1,8 +1,20 @@
 # Ansible
 
+### AnsibleをAWS環境で使う
+
+- ssh-keyの登録
+- ユーザ作成
+
+- Route53の設定
+- s3の設定
+- CloudWatchの設定
+ - RDSの監視
+- zabbixとcloudwatchメトリクスの連携をAnsibleで 
+
+
+
 - Amazon Linux AMI release 2016.09
 - Ansible:  2.2.1.0
-
 
 **ansible-galaxyでロールを生成**
 ```
