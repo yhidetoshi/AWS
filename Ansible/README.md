@@ -4,7 +4,7 @@
 - Ansible:  2.2.1.0
 
 
-**ansible-glaxyでロールを生成**
+**ansible-galaxyでロールを生成**
 ```
 $ tree .
 .
@@ -31,6 +31,20 @@ $ tree .
 ├── za-client.yml
 └── za-hosts
 ```
+
+**対象のサーバへsshできる環境を準備する**
+```
+Host <ip_address>
+  HostName <host_name>
+  User ec2-user
+  IdentityFile ~/.ssh/<key_name>
+
+Host <hostname>
+  HostName <hostname>
+  User ec2-user
+  IdentityFile ~/.ssh/<key_name>
+```
+
 
 **実行結果**
 ```
