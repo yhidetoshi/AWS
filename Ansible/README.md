@@ -2,6 +2,10 @@
 
 ### AnsibleをAWS環境で使う
 
+- 環境
+ - Amazon Linux AMI release 2016.09
+ - ansible 2.2.1.0
+
 - ssh-keyの登録
 - ユーザ作成
 
