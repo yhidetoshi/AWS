@@ -5,21 +5,12 @@
 - 環境
  - Amazon Linux AMI release 2016.09
  - ansible 2.2.1.0
-
-- ssh-keyの登録
-- ユーザ作成
-
-- Route53の設定
-- s3の設定
-- CloudWatchの設定
- - RDSの監視
-- zabbixとcloudwatchメトリクスの連携をAnsibleで 
-
-
-
-- Amazon Linux AMI release 2016.09
-- Ansible:  2.2.1.0
-
+ - ソースコードはAWSの鍵情報などあるのでしばらくプライベートのGitLabで管理
+ 
+ 
+ 
+ 
+ 
 **ansible-galaxyでロールを生成**
 ```
 $ tree .
