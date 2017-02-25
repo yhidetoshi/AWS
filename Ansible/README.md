@@ -79,3 +79,9 @@ changed: [172.31.14.124]
 PLAY RECAP *********************************************************************
 172.31.14.124              : ok=4    changed=1    unreachable=0    failed=0
 ```
+
+**OSの違いを判定して処理する**
+```
+   #when: "ansible_os_family == 'Debian'"
+   when: "ansible_distribution == 'Amazon'"
+```
