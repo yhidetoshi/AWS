@@ -1,0 +1,16 @@
+---
+# tasks file for nginx
+ - name: Install NGINX
+   yum:
+    name: nginx
+    state: present
+
+ - name: nginx.conf replace
+   template: src=./roles/nginx/templates/nginx.conf.j2 dest=/etc/nginx/conf.d/hoge.conf owner=root group=root mode=0644
+
+ - name: nginx restart
+   command: service nginx restart 
+   command: chkconfig nginx on
+# filesのファイルをcopyする 
+#   - name: files_function test
+#       copy: dest=/opt/files-test.txt src=./roles/nginx/files/files-test.txt owner=root group=root mode=644

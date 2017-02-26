@@ -1,0 +1,22 @@
+---
+# tasks file for user
+
+ - name: create new user 
+   #when: "ansible_os_family == 'Debian'" 
+   when: "ansible_distribution == 'Amazon'"
+   user: 
+     name: hide-os-amazon 
+     password: "{{ 'hide123' | password_hash('sha512') }}" 
+     shell: /bin/bash
+     group: wheel
+     generate_ssh_key: yes
+     ssh_key_bits: 2048
+     ssh_key_file: .ssh/id_rsa
+ 
+ - name: write visudo 
+   lineinfile: "dest=/etc/sudoers backup=yes state=present regexp='^hide-amazon' line='hide-amazon ALL=(ALL) NOPASSWD: ALL'"
+
+# - name: authorized_keys for hide 
+#        authorized_key:
+#        user: hide
+#        key: "<put-key>"

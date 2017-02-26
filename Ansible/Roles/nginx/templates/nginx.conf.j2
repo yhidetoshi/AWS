@@ -1,0 +1,13 @@
+server {
+  listen 80;
+  #listen 443 ssl;
+
+  root /usr/share/nginx/html;
+  index index.html index.htm;
+
+  server_name {{ server_name }};
+
+  location / {
+          try_files $uri $uri/ =404;
+  }
+}

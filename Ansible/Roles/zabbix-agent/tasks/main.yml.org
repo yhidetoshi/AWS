@@ -1,0 +1,17 @@
+#
+# - name: set repo
+#   copy: src=./roles/zabbix-agent/files/zabbix.repo dest=/etc/yum.repos.d owner=root group=root mode=0644
+
+ - name: regist repo
+   command: rpm -ivh http://repo.zabbix.com/zabbix/2.4/rhel/6/x86_64/zabbix-release-2.4-1.el6.noarch.rpm
+
+ - name: install zabbix-agent
+   yum: 
+    name: zabbix-agent 
+    state: present
+ 
+ - name: set config and restart
+   template: src=./roles/zabbix-agent/templates/zabbix_agentd.conf.j2 dest=/etc/zabbix/zabbix_agentd.conf force=yes owner=root group=root mode=0644
+ 
+ - name: auto-on
+   command: service zabbix-agent start
