@@ -1,5 +1,8 @@
 # CloudWatch Zabbix
 
+Cloudwatchのメトリクス値をzabbixに取り込む
+AWSのマネージドサービスをZabbixで監視するため
+
 - jqのインストールが必要
 
 - Scriptの場所
