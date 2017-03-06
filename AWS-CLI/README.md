@@ -223,3 +223,5 @@ aws autoscaling describe-scaling-activities \
 ### サーバ側とs3側で同期をとる(ディレクトリも問題なし)
 
 `$ aws s3 sync Local_dir s3://Bucket_Name --profile yajima`
+
+--deleteオプションを付けるとローカル側でデータを削除するとs3側でも削除される。
