@@ -55,6 +55,9 @@ $ yum -y install jq
 $ brew install jq
 ```
 
+- jqのインストール方法
+https://www.linkedin.com/pulse/how-install-jq-centos-7-artur-todeschini
+
 ▪ インスタンス一覧の取得
 ```
 $ aws ec2 describe-instances --region ap-northeast-1
