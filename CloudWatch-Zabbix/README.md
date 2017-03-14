@@ -39,3 +39,8 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
  - キー: `cloudwatch.sh["-n AWS/RDS","-d Name=DBInstanceIdentifier,Value=${DB_NAME}","-m CPUUtilization","-s Maximum"]`
  - データ型: 数値(不動少数点)
  - 更新間隔: 300
+ 
+ 
+ #### Kinesis
+ Kinesis
+`$ aws cloudwatch get-metric-statistics --namespace AWS/Kinesis --dimension Name=StreamName,Value=${STREAM_NAME} --metric IncomingBytes --statistics Maximum --start-time `date -u -d '9 minutes ago' +%Y-%m-%dT%TZ`  --end-time `date -u +%Y-%m-%dT%TZ`  --period 300`
