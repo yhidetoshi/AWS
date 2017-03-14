@@ -36,6 +36,6 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
 
 - テンプレート -> アイテム
  - タイプ: 外部チェック
- - キー: `cloudwatch.sh["-n AWS/RDS","-d Name=DBInstanceIdentifier,Value=beaconnect-db1-rsver","-m CPUUtilization","-s Maximum"]`
+ - キー: `cloudwatch.sh["-n AWS/RDS","-d Name=DBInstanceIdentifier,Value=<DB_Name>","-m CPUUtilization","-s Maximum"]`
  - データ型: 数値(不動少数点)
  - 更新間隔: 300
