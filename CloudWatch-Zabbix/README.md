@@ -42,6 +42,8 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
  
  
  #### Kinesis
+ 
+ - IncomingBytes
 ```
 $ aws cloudwatch get-metric-statistics --namespace AWS/Kinesis --dimension Name=StreamName,Value=${STREAM_NAME} --metric IncomingBytes --statistics Maximum --start-time `date -u -d '9 minutes ago' +%Y-%m-%dT%TZ`  --end-time `date -u +%Y-%m-%dT%TZ`  --period 300
 ```
