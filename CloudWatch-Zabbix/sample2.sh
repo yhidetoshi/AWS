@@ -17,6 +17,6 @@ aws --profile ${PROFILE} cloudwatch get-metric-statistics \
   --dimensions ${DIMENSIONS} \
   --metric-name ${METRIC} \
   --statistics ${STATISTICS} \
-  --start-time `date -u -d '9 minutes ago' +%Y-%m-%dT%TZ` \
+  --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` \
   --end-time `date -u +%Y-%m-%dT%TZ` \
   --period 300 | grep ${STATISTICS} | awk '{print $2}' | cut -d',' -f1
