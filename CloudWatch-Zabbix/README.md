@@ -47,3 +47,8 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
 ```
 $ aws cloudwatch get-metric-statistics --namespace AWS/Kinesis --dimension Name=StreamName,Value=${STREAM_NAME} --metric IncomingBytes --statistics Maximum --start-time `date -u -d '9 minutes ago' +%Y-%m-%dT%TZ`  --end-time `date -u +%Y-%m-%dT%TZ`  --period 300
 ```
+- GetRecords.IteratorAgeMilliseconds
+```
+aws cloudwatch --output json get-metric-statistics --region ap-northeast-1 --period 300 --namespace AWS/Kinesis --dimensions Name=StreamName,Value=${STREAM_NAME} --metric-name GetRecords.IteratorAgeMilliseconds --statistics Maximum  --start-time `date --iso-8601=seconds --date '6 minutes ago'` --end-time `date --iso-8601=seconds --date '1 minutes ago'` | jq -r ".Datapoints[].Maximum"
+```
+
