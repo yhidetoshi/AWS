@@ -39,7 +39,10 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
  - キー: `cloudwatch.sh["-n AWS/RDS","-d Name=DBInstanceIdentifier,Value=${DB_NAME}","-m CPUUtilization","-s Maximum"]`
  - データ型: 数値(不動少数点)
  - 更新間隔: 300
- 
+
+- Kinesis
+
+ `cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","GetRecords.IteratorAgeMilliseconds","-s","Average"]`
  
  #### Kinesis
  
