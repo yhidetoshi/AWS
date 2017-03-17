@@ -41,9 +41,11 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
  - 更新間隔: 300
 
 - Kinesis
-
- `cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","GetRecords.IteratorAgeMilliseconds","-s","Average"]`
- 
+```
+- cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","GetRecords.IteratorAgeMilliseconds","-s","Average"]
+- cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","GetRecords.Latency","-s","Average"]
+- cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","PutRecords.Latency","-s","Average"]
+```
  #### Kinesis
  
  - IncomingBytes
