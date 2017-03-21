@@ -63,3 +63,7 @@ $ aws cloudwatch get-metric-statistics --namespace AWS/Kinesis --dimension Name=
 aws cloudwatch --output json get-metric-statistics --region ap-northeast-1 --period 300 --namespace AWS/Kinesis --dimensions Name=StreamName,Value=${STREAM_NAME} --metric-name GetRecords.IteratorAgeMilliseconds --statistics Maximum  --start-time `date --iso-8601=seconds --date '6 minutes ago'` --end-time `date --iso-8601=seconds --date '1 minutes ago'` | jq -r ".Datapoints[].Maximum"
 ```
 
+#### ELB
+```
+aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBalancerName,Value={$LB_NAME} --metric Latency --statistics Average --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 300
+```
