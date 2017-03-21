@@ -69,3 +69,15 @@ aws cloudwatch --output json get-metric-statistics --region ap-northeast-1 --per
 ```
 aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBalancerName,Value={$LB_NAME} --metric Latency --statistics Average --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 300
 ```
+
+```
+- HTTPCode_Backend_2XX
+aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBalancerName,Value=LB-NAME --metric HTTPCode_Backend_2XX --statistics Sum --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 300
+
+- HTTPCode_Backend_3XX
+aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBalancerName,Value=LB-NAME --metric HTTPCode_Backend_3XX --statistics Sum --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 300
+
+- HTTPCode_Backend_4XX
+aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBalancerName,Value=LB-NAME --metric HTTPCode_Backend_4XX --statistics Sum --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 300
+
+```
