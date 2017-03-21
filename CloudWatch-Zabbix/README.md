@@ -46,6 +46,12 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
 - cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","GetRecords.Latency","-s","Average"]
 - cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","PutRecords.Latency","-s","Average"]
 ```
+
+- ELB
+```
+cloudwatch.sh -n AWS/ELB -d Name=LoadBalancerName,Value={$ELB_NAME} -m Latency -s Average
+```
+
  #### Kinesis
  
  - IncomingBytes
