@@ -47,6 +47,7 @@ drwxrwxr-x  2 zabbix zabbix 4096  2月 25 16:07 .aws
 - cloudwatch.sh["-n","AWS/Kinesis","-d","Name=StreamName,Value={$KINESIS_STREAM_ID}","-m","PutRecords.Latency","-s","Average"]
 ```
 
+
 #### ELB
 - Latency
 ```
@@ -80,4 +81,15 @@ aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBa
 - HTTPCode_Backend_4XX
 aws cloudwatch get-metric-statistics --namespace AWS/ELB --dimension Name=LoadBalancerName,Value=LB-NAME --metric HTTPCode_Backend_4XX --statistics Sum --start-time `date -u -d '5 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 300
 
+```
+
+#### S3
+- BucketSizeBytes
+```
+aws cloudwatch get-metric-statistics --namespace AWS/S3 --dimension Name=BucketName,Value=<BUCKET_NAME> Name=StorageType,Value=StandardStorage --metric BucketSizeBytes --statistics Average --start-time `date -u -d '1440 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 86400
+```
+
+- NumberOfObjects
+```
+$ aws cloudwatch get-metric-statistics --namespace AWS/S3 --dimension Name=BucketName,Value=<BUCKET_NAME> Name=StorageType,Value=AllStorageTypes  --metric NumberOfObjects --statistics Average --start-time `date -u -d '1440 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 86400
 ```
