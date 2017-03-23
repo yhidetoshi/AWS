@@ -96,9 +96,7 @@ $ aws cloudwatch get-metric-statistics --namespace AWS/S3 --dimension Name=Bucke
 
 
 ### Zabbix API 
-
-### Zabbix API
-
+- アクセストークンを発行して、そのトークンをもとに`method`のapiの種類を書いて実行する。
 - リクエスト
 ```
 $ curl -X GET -H "Content-Type:application/json-rpc" -d '{"auth":null, "method":"user.login", "id":1, "params":{"user":"Admin", "password":"zabbix"}, "jsonrpc":"2.0"}' http://{DOMAIN}/zabbix/api_jsonrpc.php
