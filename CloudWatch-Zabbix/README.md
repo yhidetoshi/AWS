@@ -93,3 +93,121 @@ aws cloudwatch get-metric-statistics --namespace AWS/S3 --dimension Name=BucketN
 ```
 $ aws cloudwatch get-metric-statistics --namespace AWS/S3 --dimension Name=BucketName,Value=<BUCKET_NAME> Name=StorageType,Value=AllStorageTypes  --metric NumberOfObjects --statistics Average --start-time `date -u -d '1440 minutes ago' +%Y-%m-%dT%TZ` --end-time `date -u +%Y-%m-%dT%TZ` --period 86400
 ```
+
+
+### Zabbix API 
+
+### Zabbix API
+
+- リクエスト
+```
+$ curl -X GET -H "Content-Type:application/json-rpc" -d '{"auth":null, "method":"user.login", "id":1, "params":{"user":"Admin", "password":"zabbix"}, "jsonrpc":"2.0"}' http://{DOMAIN}/zabbix/api_jsonrpc.php
+```
+
+- レスポンス
+```
+{"jsonrpc":"2.0","result":"d7a6745fb440ea497d80e14635518377","id":1}
+```
+
+- template一覧の取得
+```
+$ curl -X GET -H "Content-Type:application/json-rpc" -d '{"auth":"d7a6745fb440ea497d80e14635518377", "method":"template.get", "id":1, "params":{"output":"extend"}, "jsonrpc":"2.0"}' http://{DOMAIN}/zabbix/api_jsonrpc.php | jq '.'
+```
+- レスポンス(一部抜粋)
+```
+ {
+      "proxy_hostid": "0",
+      "host": "Template_S3",
+      "status": "3",
+      "disable_until": "0",
+      "error": "",
+      "available": "0",
+      "errors_from": "0",
+      "lastaccess": "0",
+      "ipmi_authtype": "0",
+      "ipmi_privilege": "2",
+      "ipmi_username": "",
+      "ipmi_password": "",
+      "ipmi_disable_until": "0",
+      "ipmi_available": "0",
+      "snmp_disable_until": "0",
+      "snmp_available": "0",
+      "maintenanceid": "0",
+      "maintenance_status": "0",
+      "maintenance_type": "0",
+      "maintenance_from": "0",
+      "ipmi_errors_from": "0",
+      "snmp_errors_from": "0",
+      "ipmi_error": "",
+      "snmp_error": "",
+      "jmx_disable_until": "0",
+      "jmx_available": "0",
+      "jmx_errors_from": "0",
+      "jmx_error": "",
+      "name": "Template_S3",
+      "flags": "0",
+      "templateid": "10114",
+      "description": "",
+      "tls_connect": "1",
+      "tls_accept": "1",
+      "tls_issuer": "",
+      "tls_subject": "",
+      "tls_psk_identity": "",
+      "tls_psk": ""
+    }
+  ],
+```
+
+- ホスト一覧の取得
+```
+$ curl -X GET -H "Content-Type:application/json-rpc" -d '{"auth":"d7a6745fb440ea497d80e14635518377", "method":"host.get", "id":1, "params":{"output":"extend"}, "jsonrpc":"2.0"}' http://{DOMAIN}/zabbix/api_jsonrpc.php | jq '.'
+```
+
+
+- レスポンス(一部抜粋)
+```
+{
+  "jsonrpc": "2.0",
+  "result": [
+    {
+      "hostid": "10084",
+      "proxy_hostid": "0",
+      "host": "Zabbix server",
+      "status": "0",
+      "disable_until": "0",
+      "error": "",
+      "available": "1",
+      "errors_from": "0",
+      "lastaccess": "0",
+      "ipmi_authtype": "-1",
+      "ipmi_privilege": "2",
+      "ipmi_username": "",
+      "ipmi_password": "",
+      "ipmi_disable_until": "0",
+      "ipmi_available": "0",
+      "snmp_disable_until": "0",
+      "snmp_available": "0",
+      "maintenanceid": "0",
+      "maintenance_status": "0",
+      "maintenance_type": "0",
+      "maintenance_from": "0",
+      "ipmi_errors_from": "0",
+      "snmp_errors_from": "0",
+      "ipmi_error": "",
+      "snmp_error": "",
+      "jmx_disable_until": "0",
+      "jmx_available": "0",
+      "jmx_errors_from": "0",
+      "jmx_error": "",
+      "name": "Zabbix server",
+      "flags": "0",
+      "templateid": "0",
+      "description": "",
+      "tls_connect": "1",
+      "tls_accept": "1",
+      "tls_issuer": "",
+      "tls_subject": "",
+      "tls_psk_identity": "",
+      "tls_psk": ""
+    },
+```
