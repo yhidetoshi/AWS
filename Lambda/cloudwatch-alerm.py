@@ -1,53 +1,38 @@
-# -*- coding: utf-8 -*-
-
 from __future__ import print_function
 
 import boto3
 import json
 import logging
-import datetime
+import os
 
 from base64 import b64decode
 from urllib2 import Request, urlopen, URLError, HTTPError
 
 
-ENCRYPTED_HOOK_URL = '{暗号化した文字列}'
-SLACK_CHANNEL = '{#チェンネル名}'  # Enter the Slack channel to send a message to
+# The base-64 encoded, encrypted key (CiphertextBlob) stored in the kmsEncryptedHookUrl environment variable
+ENCRYPTED_HOOK_URL = os.environ['kmsEncryptedHookUrl']
+# The Slack channel to send a message to stored in the slackChannel environment variable
+SLACK_CHANNEL = os.environ['slackChannel']
 
 HOOK_URL = "https://" + boto3.client('kms').decrypt(CiphertextBlob=b64decode(ENCRYPTED_HOOK_URL))['Plaintext']
 
 logger = logging.getLogger()
 logger.setLevel(logging.INFO)
 
-client = boto3.client('cloudwatch')
-
 
 def lambda_handler(event, context):
     logger.info("Event: " + str(event))
+    message = json.loads(event['Records'][0]['Sns']['Message'])
+    logger.info("Message: " + str(message))
 
-    startDate = datetime.datetime.today() - datetime.timedelta(days = 1)
-
-    response = client.get_metric_statistics (
-        MetricName = 'EstimatedCharges',
-        Namespace  = 'AWS/Billing',
-        Period     = 8640,
-        StartTime  = startDate,
-        EndTime    = datetime.datetime.today(),
-        Statistics = ['Maximum'],
-        Dimensions = [
-            {
-                'Name': 'Currency',
-                'Value': 'USD'
-            }
-        ]
-    )
-
-    maximum = response['Datapoints'][0]['Maximum']
-    date    = response['Datapoints'][0]['Timestamp'].strftime('%Y年%m月%d日')
+    alarm_name = message['AlarmName']
+    #old_state = message['OldStateValue']
+    new_state = message['NewStateValue']
+    reason = message['NewStateReason']
 
     slack_message = {
         'channel': SLACK_CHANNEL,
-        'text': "%sまでのAWSの料金は、$%sです。" % (date, maximum)
+        'text': "%s state is now %s: %s" % (alarm_name, new_state, reason)
     }
 
     req = Request(HOOK_URL, json.dumps(slack_message))
