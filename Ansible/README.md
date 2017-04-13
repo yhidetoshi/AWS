@@ -1,5 +1,7 @@
 # Ansible
 
+##　会社GitLabにPlaybookをpushしているので、ある程度まとまったら、こっちにもってきます。
+
 ### AnsibleをAWS環境で使う
 
 - 環境
