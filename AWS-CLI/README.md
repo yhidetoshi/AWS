@@ -231,6 +231,11 @@ aws autoscaling describe-scaling-activities \
 
 
 ### jq
+
+- DBインスタン情報を取得する
+
+`$ aws rds describe-db-instances | jq '.DBInstances[]'`
+
 - DB-instanceの名前を取得する
 
 `$ aws rds describe-db-instances | jq '.DBInstances[].DBInstanceIdentifier'`
