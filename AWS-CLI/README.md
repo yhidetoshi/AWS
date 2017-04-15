@@ -240,6 +240,10 @@ aws autoscaling describe-scaling-activities \
 
 `$ aws rds describe-db-instances | jq '.DBInstances[].DBInstanceIdentifier'`
 
+- Version
+
+`$ aws rds describe-db-instances | jq '.DBInstances[].EngineVersion'`
+
 
 ### Cloudwatch-Alerm
 ```
