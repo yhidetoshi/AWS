@@ -230,7 +230,14 @@ aws autoscaling describe-scaling-activities \
 --deleteオプションを付けるとローカル側でデータを削除するとs3側でも削除される。
 
 
+### jq
+- DB-instanceの名前を取得する
+
+`$ aws rds describe-db-instances | jq '.DBInstances[].DBInstanceIdentifier'`
+
+
 ### Cloudwatch-Alerm
 ```
 aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace AWS/EC2 --metric-name CPUUtilization --dimensions "Name=InstanceId,Value={INSTANCE_ID}" --period 300 --statistic Average --threshold 80 --comparison-operator GreaterThanOrEqualToThreshold --evaluation-periods 2 --alarm-actions arn:aws:sns:ap-northeast-1:XXXXXXX:YYYYY --ok-actions arn:aws:sns:ap-northeast-1:XXXXXXX:YYYYY
 ```
+
