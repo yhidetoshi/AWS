@@ -37,6 +37,9 @@ Infrastructure as Codeを体現できる
 ├── main.tf
 ├── modules
 │   ├── cloudwatch-alarm
+│   │   ├── external
+│   │   │   └── get-instance.sh
+│   │   ├── external.tf
 │   │   ├── main.tf
 │   │   └── variables.tf
 │   ├── iam
@@ -57,6 +60,9 @@ Infrastructure as Codeを体現できる
 ├── run-plan-terraform.sh
 ├── terraform.tf
 ├── terraform.tfstate
+├── terraform.tfstate.backup
+├── terraform.tfvars
+└── variables.tf
 ```
 
 - dry-runコマンド: `$ terraform plan`
