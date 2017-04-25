@@ -1,4 +1,4 @@
-# Terraform + Git + CIでAWSをコード管理
+# Terraform + Git + CIでAWSをコードベースで管理する
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon1.jpg)
 
