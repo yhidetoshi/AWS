@@ -25,3 +25,30 @@ Infrastructure as Codeを体現できる
    - リソース用途の目的もコメントで残すことが可能
    - 環境を一気にデプロイすることができる
   
+現在のディレクトリ構成(今後変更しますが)
+```
+.
+├── main.tf
+├── modules
+│   ├── cloudwatch-alarm
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── iam
+│   │   ├── aws_iam_group_memberships.tf
+│   │   ├── aws_iam_group_policies
+│   │   │   ├── group1_policy.json
+│   │   │   └── group2_policy.json
+│   │   ├── aws_iam_group_policies.tf
+│   │   └── aws_iam_groups.tf
+│   ├── s3
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   └── sample
+│       ├── ec2.tf.back
+│       ├── main.tf
+│       └── variables.tf
+├── run-apply-terraform.sh
+├── run-plan-terraform.sh
+├── terraform.tf
+├── terraform.tfstate
+```
