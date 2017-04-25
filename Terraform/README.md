@@ -31,7 +31,7 @@ Infrastructure as Codeを体現できる
    - 環境を一気にデプロイすることができる
   
   
-#### 現在のディレクトリ構成(今後変更しますが)
+#### Terraform 現在のディレクトリ構成(今後変更しますが)
 ```
 .
 ├── main.tf
@@ -62,3 +62,223 @@ Infrastructure as Codeを体現できる
 - dry-runコマンド: `$ terraform plan`
 - 適用コマンド`$ terraform apply`
 
+
+### Ansible playbook
+```
+├── README.md
+├── aws-api-setup.yml
+├── aws_credentials
+│   ├── user1-yajima
+│   └── user2-yajima
+├── cloudwatch-alarm-rds.retry
+├── cloudwatch-alarm-rds.yml
+├── cloudwatch-alarm.yml
+├── hosts
+├── roles
+│   ├── aws-api-setup
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   │   ├── config.j2
+│   │   │   └── credentials.j2
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── cloudwatch
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   │   ├── AwsSignatureV4.pm
+│   │   │   ├── CloudWatchClient.pm
+│   │   │   ├── mon-get-instance-stats.pl
+│   │   │   └── mon-put-instance-data.pl
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   │   └── awscreds.conf.j2
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── cloudwatch-alarm
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── ec2
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── iam
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   │   └── hoge.json
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   │   └── save_credential.j2
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── nginx
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   │   └── nginx.conf.j2
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── s3
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── ssh
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   │   └── config
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── td-agent2
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   │   └── td-agent.conf.j2
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   ├── user
+│   │   ├── README.md
+│   │   ├── defaults
+│   │   │   └── main.yml
+│   │   ├── files
+│   │   │   └── hide_id_rsa
+│   │   ├── handlers
+│   │   │   └── main.yml
+│   │   ├── meta
+│   │   │   └── main.yml
+│   │   ├── tasks
+│   │   │   └── main.yml
+│   │   ├── templates
+│   │   ├── tests
+│   │   │   ├── inventory
+│   │   │   └── test.yml
+│   │   └── vars
+│   │       └── main.yml
+│   └── zabbix-agent
+│       ├── README.md
+│       ├── defaults
+│       │   └── main.yml
+│       ├── files
+│       │   ├── zabbix-release-2.4-1.el6.noarch.rpm
+│       │   └── zabbix.repo
+│       ├── handlers
+│       │   └── main.yml
+│       ├── meta
+│       │   └── main.yml
+│       ├── roles
+│       ├── tasks
+│       │   ├── main.yml
+│       │   └── main.yml.org
+│       ├── templates
+│       │   └── zabbix_agentd.conf.j2
+│       ├── tests
+│       │   ├── inventory
+│       │   └── test.yml
+│       └── vars
+│           └── main.yml
+
+```
