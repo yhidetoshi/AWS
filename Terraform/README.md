@@ -63,7 +63,7 @@ Infrastructure as Codeを体現できる
 - 適用コマンド`$ terraform apply`
 
 
-### Ansible playbook
+### Ansible playbook(ディレクトリ構成)
 ```
 ├── README.md
 ├── aws-api-setup.yml
