@@ -55,3 +55,7 @@ Infrastructure as Codeを体現できる
 ├── terraform.tf
 ├── terraform.tfstate
 ```
+
+- dry-runコマンド: `$ terraform plan`
+- 適用コマンド`$ terraform apply`
+
