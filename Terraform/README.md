@@ -1,6 +1,11 @@
 # Terraform + Git + CIでAWSをコード管理
+## Terraformとは
+```
+Terraform は、Vagrant などで有名な HashiCorp が作っているコードからインフラリソースを作成する・コードで
+インフラを管理するためのツールです。AWS, GCP, Azureなどにも対応。 
+```
 
-Infrastructure as CodeをAWS環境で実践
+Infrastructure as Codeを体現できる
 
 
 ### 現在の構成
@@ -12,11 +17,6 @@ Infrastructure as CodeをAWS環境で実践
 - 不要なリソースの判断が難しい
 - マネジメントコンソールの操作ミスを防ぎたい
 
-## Terraformとは
-```
-Terraform は、Vagrant などで有名な HashiCorp が作っているコードからインフラリソースを作成する・コードで
-インフラを管理するためのツールです。AWS, GCP, Azureなどにも対応。 
-```
 - 特徴
    - OSSとして利用ができる
    - プロダクト自体が活発に活動している。機能が次々とリリースされている
