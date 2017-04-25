@@ -1,4 +1,7 @@
 # Terraform + Git + CIでAWSをコード管理
+
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon1.jpg)
+
 ## Terraformとは
 ```
 Terraform は、Vagrant などで有名な HashiCorp が作っているコードからインフラリソースを作成する・コードで
