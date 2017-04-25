@@ -5,6 +5,7 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/aws/aws-terraform-ci.png)
 
 ※内容については、別途かきます。
+https://github.com/yhidetoshi/AWS/blob/master/Terraform/README.md
 
 ### サーバレスアーキテクチャ(IoT)　実施した構成図
 ![Alt Text](https://github.com/yhidetoshi/Pictures/raw/master/aws/aws-iot-fig2.png)
