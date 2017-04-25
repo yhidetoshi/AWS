@@ -68,11 +68,8 @@ Infrastructure as Codeを体現できる
 ├── README.md
 ├── aws-api-setup.yml
 ├── aws_credentials
-│   ├── user1-yajima
-│   └── user2-yajima
-├── cloudwatch-alarm-rds.retry
-├── cloudwatch-alarm-rds.yml
-├── cloudwatch-alarm.yml
+│   ├── user1
+│   └── user2
 ├── hosts
 ├── roles
 │   ├── aws-api-setup
@@ -182,23 +179,6 @@ Infrastructure as Codeを体現できる
 │   │   │   └── main.yml
 │   │   ├── templates
 │   │   │   └── nginx.conf.j2
-│   │   ├── tests
-│   │   │   ├── inventory
-│   │   │   └── test.yml
-│   │   └── vars
-│   │       └── main.yml
-│   ├── s3
-│   │   ├── README.md
-│   │   ├── defaults
-│   │   │   └── main.yml
-│   │   ├── files
-│   │   ├── handlers
-│   │   │   └── main.yml
-│   │   ├── meta
-│   │   │   └── main.yml
-│   │   ├── tasks
-│   │   │   └── main.yml
-│   │   ├── templates
 │   │   ├── tests
 │   │   │   ├── inventory
 │   │   │   └── test.yml
