@@ -1,6 +1,8 @@
 # Terraform + Ansible + Git + CIを用いてAWSをInfrastructure as Codeで管理する
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon1.jpg)
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-image.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 
 
 ## Infrastructure as Codeとは
@@ -20,7 +22,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform_overview-icon.png)
 ※画像引用元：https://goo.gl/OR9WgP
 
-### 現在の構成
+### 現在の構成(CI連携部分)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/aws/aws-terraform-ci.png)
 
 #### 現在の管理方法
