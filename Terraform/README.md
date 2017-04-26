@@ -25,6 +25,9 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 ### 現在の構成(CI連携部分)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/aws/aws-terraform-ci.png)
 
+#### Code管理のpullrequest
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/code-terraform.PNG)
+
 #### 現在の管理方法
 - マネジメントコンソールでポチポチする。
 - 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
