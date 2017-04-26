@@ -43,6 +43,9 @@ Infrastructure as Codeを体現できる
 │   │   ├── external.tf
 │   │   ├── main.tf
 │   │   └── variables.tf
+│   ├── elb-http
+│   │   ├── main.tf
+│   │   └── variables.tf
 │   ├── iam
 │   │   ├── aws_iam_group_memberships.tf
 │   │   ├── aws_iam_group_policies
@@ -53,9 +56,13 @@ Infrastructure as Codeを体現できる
 │   ├── s3
 │   │   ├── main.tf
 │   │   └── variables.tf
-│   └── sample
-│       ├── ec2.tf.back
+│   ├── sample
+│   │   ├── ec2.tf.back
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   └── security-group
 │       ├── main.tf
+│       ├── output.tf
 │       └── variables.tf
 ├── run-apply-terraform.sh
 ├── run-plan-terraform.sh
