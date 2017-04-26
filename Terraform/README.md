@@ -7,7 +7,6 @@
 
 
 ## Infrastructure as Codeとは
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon.jpg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon2.jpg)
 ```
 Infrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
@@ -29,7 +28,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 #### 現在の管理方法
 - マネジメントコンソールでポチポチする。
 - 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
-- 不要なリソースの判断が難しい
+- 不要なリソースの判断が難しい(何の為につくられたものなのか)
 - マネジメントコンソールの操作ミスを防ぎたい
 
 #### 特徴
