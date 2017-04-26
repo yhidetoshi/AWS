@@ -5,7 +5,7 @@
 
 ## Infrastructure as Codeとは
 ```
-nfrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
+Infrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
 システム管理に応用するための方法論です。
 ```
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon.jpg)
