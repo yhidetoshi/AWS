@@ -1,6 +1,6 @@
 # Terraform + Ansible + Git + CIを用いてAWSをInfrastructure as Codeで管理する
 
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon1.jpg)
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-small2-icon.jpg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/gitlab/gitlab-logo2.png)
