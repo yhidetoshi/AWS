@@ -1,14 +1,19 @@
-# Terraform + Ansible + Git + CIでAWSをコードベースで管理
+# Terraform + Ansible + Git + CIを用いてAWSをInfrastructure as Codeで管理する
 
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon1.jpg)
+
+
+## Infrastructure as Codeとは
+```
+nfrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
+システム管理に応用するための方法論です。
+```
 
 ## Terraformとは
 ```
 Terraform は、Vagrant などで有名な HashiCorp が作っているコードからインフラリソースを作成する・コードで
 インフラを管理するためのツールです。AWS, GCP, Azureなどにも対応。 
 ```
-
-Infrastructure as Codeを体現できる
 
 
 ### 現在の構成
