@@ -3,6 +3,7 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon1.jpg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-image.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/gitlab/gitlab-logo2.png)
 
 
 ## Infrastructure as Codeとは
