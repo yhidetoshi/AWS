@@ -10,7 +10,7 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon2.jpg)
 ```
 Infrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
-システム管理に応用するための方法論です。
+システム管理に応用するための方法論のこと。
 ```
 
 ## Terraformとは
@@ -19,7 +19,7 @@ Infrastructure as Codeは自動化、バージョン管理、テスト、継続�
 
 ```
 Terraform は、Vagrant などで有名な HashiCorp が作っているコードからインフラリソースを作成する・コードで
-インフラを管理するためのツールです。AWS, GCP, Azureなどにも対応。 
+インフラを管理するためのツール。AWS, GCP, Azureなどにも対応。 
 ```
 
 ### 現在の構成(CI連携部分)
