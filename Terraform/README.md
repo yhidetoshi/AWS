@@ -7,21 +7,20 @@
 
 
 ## Infrastructure as Codeとは
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon.jpg)
 ```
 Infrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
 システム管理に応用するための方法論です。
 ```
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon.jpg)
-
 
 ## Terraformとは
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform_overview-icon.png)
+※画像引用元：https://goo.gl/OR9WgP
+
 ```
 Terraform は、Vagrant などで有名な HashiCorp が作っているコードからインフラリソースを作成する・コードで
 インフラを管理するためのツールです。AWS, GCP, Azureなどにも対応。 
 ```
-
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform_overview-icon.png)
-※画像引用元：https://goo.gl/OR9WgP
 
 ### 現在の構成(CI連携部分)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/aws/aws-terraform-ci.png)
