@@ -23,7 +23,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 ```
 
 ### 現在の構成(CI連携部分)
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/aws/terraform-ci-jenkins.png)
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-ci-jenkins.png)
 
 #### AWSのリソース追加はこんな感じに。
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/code-terraform2.PNG)
