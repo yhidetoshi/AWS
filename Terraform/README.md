@@ -47,6 +47,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
   
   
 #### Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
+- ソースコードは会社のGitLabにあげてます
 ```
 .
 ├── README.md
