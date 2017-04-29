@@ -49,6 +49,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 #### Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
 ```
 .
+├── README.md
 ├── main.tf
 ├── modules
 │   ├── cloudwatch-alarm
@@ -61,12 +62,25 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 │   │   ├── main.tf
 │   │   └── variables.tf
 │   ├── iam
-│   │   ├── aws_iam_group_memberships.tf
+│   │   ├── aws_iam_group_memberships.tf.back
 │   │   ├── aws_iam_group_policies
 │   │   │   ├── group1_policy.json
 │   │   │   └── group2_policy.json
-│   │   ├── aws_iam_group_policies.tf
-│   │   └── aws_iam_groups.tf
+│   │   ├── aws_iam_group_policies.tf.back
+│   │   ├── aws_iam_groups.tf
+│   │   ├── group
+│   │   │   ├── iam_group.tf
+│   │   │   ├── outputs.tf
+│   │   │   └── variables.tf
+│   │   ├── policy
+│   │   │   ├── aws_iam_policy.tf
+│   │   │   ├── group1_policy.json
+│   │   │   ├── outputs.tf
+│   │   │   └── variables.tf
+│   │   └── user
+│   │       ├── aws_iam_user.tf
+│   │       ├── outputs.tf.back
+│   │       └── variables.tf
 │   ├── s3
 │   │   ├── main.tf
 │   │   └── variables.tf
@@ -81,7 +95,6 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 ├── run-apply-terraform.sh
 ├── run-plan-terraform.sh
 ├── terraform.tf
-├── terraform.tfstate
 ├── terraform.tfstate.backup
 ├── terraform.tfvars
 └── variables.tf
