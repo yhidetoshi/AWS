@@ -1,8 +1,8 @@
 ## AWSについて
 
 ### AWSのコードベース管理
-#### 実施した現在の構成図
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/aws/aws-terraform-ci.png)
+#### CI連携部分
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terrafom-ci-slack.png)
 
 ※内容については、別途かきます。
 https://github.com/yhidetoshi/AWS/blob/master/Terraform/README.md
