@@ -67,14 +67,14 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 │   │   │   ├── group1_policy.json
 │   │   │   └── group2_policy.json
 │   │   ├── aws_iam_group_policies.tf.back
-│   │   ├── aws_iam_groups.tf
+│   │   ├── aws_iam_groups.tf.back
 │   │   ├── group
 │   │   │   ├── iam_group.tf
 │   │   │   ├── outputs.tf
 │   │   │   └── variables.tf
 │   │   ├── policy
 │   │   │   ├── aws_iam_policy.tf
-│   │   │   ├── group1_policy.json
+│   │   │   ├── iam_policy.json
 │   │   │   ├── outputs.tf
 │   │   │   └── variables.tf
 │   │   └── user
@@ -88,13 +88,17 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 │   │   ├── ec2.tf.back
 │   │   ├── main.tf
 │   │   └── variables.tf
-│   └── security-group
+│   ├── security-group
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   └── sns
 │       ├── main.tf
-│       ├── output.tf
 │       └── variables.tf
 ├── run-apply-terraform.sh
 ├── run-plan-terraform.sh
 ├── terraform.tf
+├── terraform.tfstate
 ├── terraform.tfstate.backup
 ├── terraform.tfvars
 └── variables.tf
