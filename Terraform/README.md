@@ -53,6 +53,64 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 #### Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
 - ソースコードは会社のGitLabにあげてます
 ```
+.
+├── README.md
+├── main.tf
+├── modules
+│   ├── cloudwatch-alarm
+│   │   ├── external
+│   │   │   └── get-instance.sh
+│   │   ├── external.tf
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── elb-http
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── iam
+│   │   ├── aws_iam_group_memberships.tf.back
+│   │   ├── aws_iam_group_policies
+│   │   │   ├── group1_policy.json
+│   │   │   └── group2_policy.json
+│   │   ├── aws_iam_group_policies.tf.back
+│   │   ├── aws_iam_groups.tf.back
+│   │   ├── group
+│   │   │   ├── iam_group.tf
+│   │   │   ├── outputs.tf
+│   │   │   └── variables.tf
+│   │   ├── policy
+│   │   │   ├── aws_iam_policy.tf
+│   │   │   ├── iam_policy.json
+│   │   │   ├── outputs.tf
+│   │   │   └── variables.tf
+│   │   └── user
+│   │       ├── aws_iam_user.tf
+│   │       ├── outputs.tf.back
+│   │       └── variables.tf
+│   ├── public-subnet
+│   │   ├── main.tf
+│   │   ├── outputs.tf
+│   │   └── variables.tf
+│   ├── s3
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── sample
+│   │   ├── ec2.tf.back
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── security-group
+│   │   ├── main.tf
+│   │   ├── output.tf
+│   │   └── variables.tf
+│   └── sns
+│       ├── main.tf
+│       └── variables.tf
+├── run-apply-terraform.sh
+├── run-plan-terraform.sh
+├── terraform.tf
+├── terraform.tfstate
+├── terraform.tfstate.backup
+├── terraform.tfvars
+└── variables.tf
 ```
 
 - dry-runコマンド: `$ terraform plan`
