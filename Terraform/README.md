@@ -70,12 +70,36 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 | VPC        | aws_route_table_association|
 | Cloudwatch | aws_cloudwatch_metric_alarm|
 
-- `terraform.tfvars`
-　　-　AWSのAPIをコールするので、このファイル名に鍵情報をセットする。
+- `terraform.tfvars`　(AWSのAPIをコールするので、このファイル名に鍵情報をセットする。)
 ```
 aws_access_key = "aws_access_key"
 aws_secret_key = "aws_secret_key"
 ```
+
+- `main.tf` (モジュールを呼び出すmain.tfの一部抜粋)
+```
+### VPC
+module "vpc" {
+   source = "./modules/vpc"
+   name = "terraform-test-vpc"
+
+   cidr = "192.168.0.0/16"
+   private_subnets = ["192.168.1.0/24", "192.168.2.0/24"]
+   public_subnets  = ["192.168.10.0/24", "192.168.11.0/24"]
+
+   enable_nat_gateway = "true"
+
+   azs = ["ap-northeast-1a", "ap-northeast-1c"]
+   tags {
+     "Terraform" = "true"
+   }
+}
+```
+
+- dry-runコマンド: `$ terraform plan`
+- moduleセットコマンド: `$terraform get`
+- 適用コマンド`$ terraform apply`
+
 
 ### Terraformでサポートしている機能としていないのがあればメモしていきます。
 #### Not Supported
@@ -146,11 +170,6 @@ aws_secret_key = "aws_secret_key"
 ├── terraform.tfvars
 └── variables.tf
 ```
-
-- dry-runコマンド: `$ terraform plan`
-- moduleセットコマンド: `terraform get`
-- 適用コマンド`$ terraform apply`
-
 
 ### Ansible playbook(ディレクトリ構成)
 ```
