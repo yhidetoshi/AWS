@@ -43,8 +43,36 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
    
    - 環境を一気にデプロイすることができる
    → `テンプレート化してモジュールとして使いまわすことができ、マルチクラウド環境(Azure/GCP)で利用することができるようになる`
-  
-  
+
+
+### 利用しているリソースの一覧
+
+|サービス      |resource     |
+|:-----------|:------------|
+| EC2-instance | aws_instance|
+| EC2-SecurityGroup | aws_security_group |
+| S3         | aws_s3_bucket|
+| IAM-User   | aws_iam_user|
+| IAM-User   | aws_iam_access_key|
+| IAM-Group  | aws_iam_group|
+| IAM-Policy | aws_iam_policy| 
+| SNS        | aws_sns_topic|
+| SNS        | aws_sns_topic_subscription|
+| ELB        | aws_elb|
+| VPC        | aws_vpc|
+| VPC        | aws_internet_gateway|
+| VPC        | aws_route_table|
+| VPC        | aws_route|
+| VPC        | aws_route_table|
+| VPC        | aws_subnet|
+| VPC        | aws_eip|
+| VPC        | aws_nat_gateway|
+| VPC        | aws_route_table_association|
+| Cloudwatch | aws_cloudwatch_metric_alarm|
+
+
+
+
 ### Terraformでサポートしている機能としていないのがあればメモしていきます。
 #### Not Supported
 - SNS
