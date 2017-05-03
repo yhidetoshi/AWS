@@ -70,8 +70,12 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 | VPC        | aws_route_table_association|
 | Cloudwatch | aws_cloudwatch_metric_alarm|
 
-
-
+- `terraform.tfvars`
+　　-　AWSのAPIをコールするので、このファイル名に鍵情報をセットする。
+```
+aws_access_key = "aws_access_key"
+aws_secret_key = "aws_secret_key"
+```
 
 ### Terraformでサポートしている機能としていないのがあればメモしていきます。
 #### Not Supported
@@ -144,6 +148,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 ```
 
 - dry-runコマンド: `$ terraform plan`
+- moduleセットコマンド: `terraform get`
 - 適用コマンド`$ terraform apply`
 
 
