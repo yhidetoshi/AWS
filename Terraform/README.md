@@ -52,8 +52,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
   
 #### Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
 - ソースコードは会社のGitLabにあげてます
-```
-.
+```.
 ├── README.md
 ├── main.tf
 ├── modules
@@ -101,7 +100,10 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 │   │   ├── main.tf
 │   │   ├── output.tf
 │   │   └── variables.tf
-│   └── sns
+│   ├── sns
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   └── vpc
 │       ├── main.tf
 │       └── variables.tf
 ├── run-apply-terraform.sh
