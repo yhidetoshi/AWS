@@ -35,7 +35,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 - 不要なリソースの判断が難しい(何の為につくられたものなのか)
 - マネジメントコンソールの操作ミスを防ぎたい
 
-#### 特徴
+### 特徴
    - OSSとして利用ができる
    - プロダクト自体が活発に活動している。機能が次々とリリースされている
    - Infrastructure as Codeとしてクラウドインフラを設定、運用できる
@@ -48,7 +48,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
    → `テンプレート化してモジュールとして使いまわすことができ、マルチクラウド環境(Azure/GCP)で利用することができるようになる`
 
 
-### 利用しているリソースの一覧
+## 利用しているリソースの一覧
 
 |サービス      |resource     |
 |:-----------|:------------|
@@ -99,7 +99,7 @@ module "vpc" {
 }
 ```
 
-### Terraformコマンドのまとめ
+## Terraformコマンドのまとめ
 - moduleセットコマンド: `$ terraform get`
 - dry-runコマンド: `$ terraform plan`
 - 適用コマンド(apply):`$ terraform apply`
@@ -113,7 +113,7 @@ module "vpc" {
 - SNS
   - Emai
   
-#### Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
+## Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
 - ソースコードは会社のGitLabにあげてます
 ```.
 ├── README.md
