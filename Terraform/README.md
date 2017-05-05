@@ -73,6 +73,7 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 | VPC        | aws_route_table_association|
 | Cloudwatch | aws_cloudwatch_metric_alarm|
 |Kinesis_Stream|aws_kinesis_stream|
+|EC2 AMI|aws_ami|
 
 - `terraform.tfvars`　(AWSのAPIをコールするので、このファイル名に鍵情報をセットする。)
 ```
@@ -116,11 +117,14 @@ module "vpc" {
   
 ## Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
 - ソースコードは会社のGitLabにあげてます
-```.
+```
 .
 ├── README.md
 ├── main.tf
 ├── modules
+│   ├── ami
+│   │   ├── main.tf
+│   │   └── variables.tf
 │   ├── cloudwatch-alarm
 │   │   ├── external
 │   │   │   └── get-instance.sh
