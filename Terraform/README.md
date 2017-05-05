@@ -96,11 +96,13 @@ module "vpc" {
 }
 ```
 
+### Terraformコマンドのまとめ
 - moduleセットコマンド: `$ terraform get`
 - dry-runコマンド: `$ terraform plan`
 - 適用コマンド(apply):`$ terraform apply`
 - dry-run-destroy: `$ terraform plan --destroy`
 - 適用コマンド(destroy): `$ terraform destroy`
+- 管理状況の確認: `$ terraform show`
 
 
 ### Terraformでサポートしている機能としていないのがあればメモしていきます。
