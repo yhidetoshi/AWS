@@ -75,6 +75,8 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 |Kinesis_Stream|aws_kinesis_stream|
 |EC2 AMI|aws_ami|
 |EC2 AMI|aws_ami_from_instance|
+|Route53|aws_route53_zone|
+|Route53|aws_route53_record|
 
 - `terraform.tfvars`　(AWSのAPIをコールするので、このファイル名に鍵情報をセットする。)
 ```
@@ -165,6 +167,9 @@ module "vpc" {
 │   ├── public-subnet
 │   │   ├── main.tf
 │   │   ├── outputs.tf
+│   │   └── variables.tf
+│   ├── route53
+│   │   ├── main.tf
 │   │   └── variables.tf
 │   ├── s3
 │   │   ├── main.tf
