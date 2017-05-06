@@ -5,6 +5,42 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
 
+
+※ 社内でちょっと使うために下の説明を書いてみました...
+## 今、取り組んでいる事を説明するために...
+
+### まず、Cloud環境について
+- Cloud Infrastructureは仮想化されており、ソフトウェアで実装されている。
+- 基本的にはRESTFull(POST,PUT,DELETE,GET)のインタフェースが用意されており、APIベースで操作可能。
+- パブリッククラウドのAWS/Azure/GCPもあてはまり
+- プライベートクラウドで代表的なOpenStack/CloudStackも同様
+  
+ **(課題)**
+- 規模も大きくなるにつれ運用コスト、構築コストを下げる事が課題となる
+- 同じ設定やオペレーションも繰り返す事が多々ある
+　-> インフラがソフトウェアで、APIのインタフェースが用意されているので、コードで扱う事が可能！
+    -> 個人的にはインフラ(特にクラウド)エンジニアとしては、DevOpsを導入してコードを書いたりして自動化をするのは醍醐味だと思う。
+
+### Infrastructure as Codeを実践するために
+- **Cloudインフラをオーケストレーションで管理することが可能**
+  - Terraform
+    - AWSをコードで管理する
+      - EC2/VPC/IAM/Kinesis/SNS/Cloudwatch/...etc
+
+- **Instanceの構築・設定・保守の自動化**
+  - Ansible
+    - Cloudwatch-カスタムメトリクス
+      - Memory使用率の取得可能に
+      - 特定のプロセス監視を可能に
+      - OSSインストール
+        - Nginx/Fluentd/Mongo/...etc 
+       
+- **継続的インテグレーション(CI)の連動**
+  - Infrastructure as Codeのワークフローに乗るために
+   - Jenkins/GitLabとの連携
+     - ブランチにPushしてdry-run
+     - MasterブランチにMergeしてapply 
+
 ## Infrastructure as Codeとは
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon2.jpg)
 ```
