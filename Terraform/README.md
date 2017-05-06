@@ -77,6 +77,9 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 |EC2 AMI|aws_ami_from_instance|
 |Route53|aws_route53_zone|
 |Route53|aws_route53_record|
+|EC2 EBS|aws_ebs_volume|
+|EC2 EBS|aws_ebs_snapshot|
+
 
 - `terraform.tfvars`　(AWSのAPIをコールするので、このファイル名に鍵情報をセットする。)
 ```
@@ -138,6 +141,10 @@ module "vpc" {
 │   │   ├── external.tf
 │   │   ├── main.tf
 │   │   └── variables.tf
+│   ├── ebs
+│   │   └── create-snapshot
+│   │       ├── main.tf
+│   │       └── variables.tf
 │   ├── elb-http
 │   │   ├── main.tf
 │   │   └── variables.tf
