@@ -23,7 +23,7 @@
 
 -> 個人的にはインフラ(特にクラウド)エンジニアとしては、DevOpsを導入してコードを書いたりして自動化をするのは醍醐味だと思う。
 
-### Infrastructure as Codeを実践するために
+### Infrastructure as Codeを実践するためにいくつかのOSSを活用する
 - **Cloudインフラをオーケストレーションで管理することが可能**
   - Terraform
     - AWSをコードで管理する
