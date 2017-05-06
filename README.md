@@ -4,7 +4,7 @@
 #### CI連携部分
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terrafom-ci-slack.png)
 
-※内容については、別途かきます。
+※Terraform　やCI
 https://github.com/yhidetoshi/AWS/blob/master/Terraform/README.md
 
 ### サーバレスアーキテクチャ(IoT)　実施した構成図
