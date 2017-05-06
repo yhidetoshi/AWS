@@ -21,6 +21,9 @@ Terraform は、Vagrant などで有名な HashiCorp が作っているコード
 インフラを管理するためのツール。AWS, GCP, Azureなどにも対応。 
 ```
 
+### Terraformチュートリアル_AWS
+https://www.terraform.io/docs/providers/aws/index.html
+
 ### 現在の構成(CI連携部分)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform-icon-slack2.png)
 
