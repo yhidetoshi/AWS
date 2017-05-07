@@ -119,6 +119,7 @@ https://www.terraform.io/docs/providers/aws/index.html
 |Route53|aws_route53_record|
 |EC2 EBS|aws_ebs_volume|
 |EC2 EBS|aws_ebs_snapshot|
+|RDS|aws_db_parameter_group|
 
 
 - `terraform.tfvars`　(AWSのAPIをコールするので、このファイル名に鍵情報をセットする。)
