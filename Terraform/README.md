@@ -90,7 +90,7 @@ https://www.terraform.io/docs/providers/aws/index.html
    → `テンプレート化してモジュールとして使いまわすことができ、マルチクラウド環境(Azure/GCP)で利用することができるようになる`
 
 
-## 利用しているリソースの一覧
+## 利用しているリソースの一覧 (Sum 30 resource types)
 
 |サービス      |resource     |
 |:-----------|:------------|
