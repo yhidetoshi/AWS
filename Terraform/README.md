@@ -120,6 +120,8 @@ https://www.terraform.io/docs/providers/aws/index.html
 |EC2 EBS|aws_ebs_volume|
 |EC2 EBS|aws_ebs_snapshot|
 |RDS|aws_db_parameter_group|
+|RDS|aws_db_instance|
+|RDS|aws_db_subnet_group|
 
 
 - `terraform.tfvars`　(AWSのAPIをコールするので、このファイル名に鍵情報をセットする。)
@@ -216,6 +218,15 @@ module "vpc" {
 │   │   ├── main.tf
 │   │   ├── outputs.tf
 │   │   └── variables.tf
+│   ├── rds
+│   │   ├── create-instance
+│   │   │   ├── main.tf
+│   │   │   ├── output.tf
+│   │   │   ├── subnet.tf
+│   │   │   └── variables.tf
+│   │   └── parameter-group
+│   │       ├── main.tf
+│   │       └── variables.tf
 │   ├── route53
 │   │   ├── main.tf
 │   │   └── variables.tf
