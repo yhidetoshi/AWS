@@ -90,6 +90,7 @@ https://www.terraform.io/docs/providers/aws/index.html
 
 
 ## 利用しているリソースの一覧 (Sum 30 resource types)
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/Terraform-aws-fig.png)
 
 |サービス      |resource     |
 |:-----------|:------------|
