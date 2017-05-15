@@ -5,15 +5,6 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
 
-
-※ 社内でちょっと使うために下の説明を書いてみました...
-## 今、取り組んでいる事を説明するために...
-
-### まず、Cloud環境について
-- Cloud Infrastructureは仮想化されており、ソフトウェアで実装されている。
-- 基本的にはRESTFull(POST,PUT,DELETE,GET)のインタフェースが用意されており、APIベースで操作可能。
-- パブリッククラウドのAWS/Azure/GCP...etcもあてはまり
-- プライベートクラウドで代表的なOpenStack/CloudStackも同様
   
  **(課題)**
 - システム規模、利用ユーザが増えるにつれ運用コスト、構築コストを下げる事が課題となる
