@@ -6,13 +6,6 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
 
   
- **(課題)**
-- システム規模、利用ユーザが増えるにつれ運用コスト、構築コストを下げる事が課題となる
-- 同じ設定やオペレーションも繰り返す事が多々ある
-
--> インフラがソフトウェアで、APIのインタフェースが用意されているので、コードで扱う事が可能！
-
-
 ### Infrastructure as Codeを実践するためにいくつかのOSSを活用する
 - **Cloudインフラをオーケストレーションで管理することが可能**
   - Terraform
