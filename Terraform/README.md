@@ -5,7 +5,7 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
 
-### 現在の管理方法
+### 現在のAWS等の管理方法
 - マネジメントコンソールでポチポチする。
 - 同じ設定・作業も手動でやっている
 - 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
