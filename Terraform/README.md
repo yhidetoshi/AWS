@@ -5,7 +5,16 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
 
-  
+### 現在の管理方法
+- マネジメントコンソールでポチポチする。
+- 同じ設定・作業も手動でやっている
+- 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
+- 不要なリソースの判断が難しい(何の為につくられたものなのか)
+- マネジメントコンソールの操作ミスを防ぎたい
+
+
+→ **ソフトウェア的に制御できるインフラのコード化することで、設定・構築・運用の自動化したい**
+ 
 ### Infrastructure as Codeを実践するためにいくつかのOSSを活用する
 - **Cloudインフラをオーケストレーションで管理することが可能**
   - Terraform
@@ -53,13 +62,6 @@ https://www.terraform.io/docs/providers/aws/index.html
 #### AWSのリソース追加はこんな感じに。
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/code-terraform2.PNG)
 
-### 現在の管理方法
-- マネジメントコンソールでポチポチする。
-
-　　　　　→　ブラウザでポチポチしている裏ではAPIがコールされて操作が行われている。
-- 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
-- 不要なリソースの判断が難しい(何の為につくられたものなのか)
-- マネジメントコンソールの操作ミスを防ぎたい
 
 ### 特徴
    - OSSとして利用ができ、プロダクト自体も活発に活動しているため機能が次々とリリースされている
