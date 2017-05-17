@@ -4,16 +4,17 @@
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/gitlab/gitlab-logo2.png)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Jenkins/jenkins-icon2.jpeg)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Ansible_dev/ansible-small-logo.png)
+ 
+## Infrastructure as Codeとは
+![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon2.jpg)
 
-### 現在のAWS等の管理方法
-- マネジメントコンソールでポチポチする。
-- 同じ設定・作業も手動でやっている
-- 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
-- 不要なリソースの判断が難しい(何の為につくられたものなのか)
-- マネジメントコンソールの操作ミスを防ぎたい
-
-
-→ **ソフトウェア的に制御できるインフラのコード化することで、設定・構築・運用の自動化したい**
+```
+Infrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
+システム管理に応用するための方法論のこと。
+```
+→ インフラがクラウド化(AWS/GCP/Azure..)ホストが仮想化(VM/コンテナ)していて、ソフトウェア的に制御できるようになった。
+  
+  → じゃあ、Gitでインフラをバージョン管理して、構築・運用・テストを自動化しよう。
  
 ### Infrastructure as Codeを実践するためにいくつかのOSSを活用する
 - **Cloudインフラをオーケストレーションで管理することが可能**
@@ -23,7 +24,7 @@
 
 **Instanceの構築・設定・保守の自動化**
 ```
-- Ansible
+- 構成管理ツール(Ansible/Chef)
 　　　- Cloudwatch-カスタムメトリクス
 　　　　　- Memory使用率の取得可能に
 　　　　　　- 特定のプロセス監視を可能に 
@@ -40,12 +41,16 @@
      - MasterブランチにMergeしてapply 
 ```
 
-## Infrastructure as Codeとは
-![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/infra-as-code-icon2.jpg)
-```
-Infrastructure as Codeは自動化、バージョン管理、テスト、継続的インテグレーションといった、ソフトウェア開発のプラクティスを
-システム管理に応用するための方法論のこと。
-```
+
+### 現在のAWS等の管理方法
+- マネジメントコンソールでポチポチする。
+- 同じ設定・作業も手動でやっている
+- 作業履歴が残らない (CloudTrailを利用するとユーザ名とコールしたAPIは残る...)
+- 不要なリソースの判断が難しい(何の為につくられたものなのか)
+- マネジメントコンソールの操作ミスを防ぎたい
+
+→ **ソフトウェア的に制御できるインフラのコード化することで、設定・構築・運用の自動化したい**
+
 
 ## Terraformとは
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terraform_overview-icon.png)
