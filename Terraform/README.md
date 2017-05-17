@@ -28,8 +28,11 @@
 　　　　　- Memory使用率の取得可能に
 　　　　　　- 特定のプロセス監視を可能に 
 　　　- OSSインストール/セットアップ
-　　　　　-　Nginx/Fluentd/Mongo/...etc 
-       
+　　　　　-　Nginx/Fluentd/Mongo/...etc
+　 - パッチあて作業
+  
+      
+       
 - 継続的インテグレーション(CI)の連動
   - Infrastructure as Codeのワークフローに乗るために
    - Jenkins/GitLabとの連携
