@@ -163,9 +163,16 @@ module "vpc" {
 ## Terraform 現在のディレクトリ構成(今後変更しますがとりあえず。)
 - ソースコードは会社のGitLabにあげてます
 ```
+$ tree .
 .
 ├── README.md
+├── ami.tf
+├── cloudwatch.tf
+├── ec2.tf
+├── iam.tf
+├── kinesis.tf
 ├── main.tf
+├── main.tf.back
 ├── modules
 │   ├── ami
 │   │   ├── from-instance
@@ -184,6 +191,10 @@ module "vpc" {
 │   │   └── create-snapshot
 │   │       ├── main.tf
 │   │       └── variables.tf
+│   ├── ec2
+│   │   ├── ec2.tf.back
+│   │   ├── main.tf
+│   │   └── variables.tf
 │   ├── elb-http
 │   │   ├── main.tf
 │   │   └── variables.tf
@@ -229,10 +240,6 @@ module "vpc" {
 │   ├── s3
 │   │   ├── main.tf
 │   │   └── variables.tf
-│   ├── sample
-│   │   ├── ec2.tf.back
-│   │   ├── main.tf
-│   │   └── variables.tf
 │   ├── security-group
 │   │   ├── main.tf
 │   │   ├── output.tf
@@ -243,13 +250,19 @@ module "vpc" {
 │   └── vpc
 │       ├── main.tf
 │       └── variables.tf
+├── rds.tf
+├── route53.tf
 ├── run-apply-terraform.sh
+├── run-delete-terraform.sh
 ├── run-plan-terraform.sh
-├── terraform.tf
+├── s3.tf
+├── sns.tf
 ├── terraform.tfstate
+├── terraform.tfstate.back
 ├── terraform.tfstate.backup
 ├── terraform.tfvars
-└── variables.tf
+├── variables.tf
+└── vpc.tf
 ```
 
 ### Ansible playbook(ディレクトリ構成)
