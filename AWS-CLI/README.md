@@ -247,6 +247,9 @@ aws autoscaling describe-scaling-activities \
 #### インスタンスID/PIP/インスタンス名を取得する場合
 `$ aws ec2 describe-instances | jq '.Reservations[].Instances[] | {InstanceId, PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)}'`
 
+### 作成途中のAMIがあるか確認する
+`$ aws ec2 describe-images --owners self | jq '.Images[] | {ImageId,State} | select(.State == "pending")'`
+
 ### Cloudwatch-Alerm
 ```
 aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace AWS/EC2 --metric-name CPUUtilization --dimensions "Name=InstanceId,Value={INSTANCE_ID}" --period 300 --statistic Average --threshold 80 --comparison-operator GreaterThanOrEqualToThreshold --evaluation-periods 2 --alarm-actions arn:aws:sns:ap-northeast-1:XXXXXXX:YYYYY --ok-actions arn:aws:sns:ap-northeast-1:XXXXXXX:YYYYY
