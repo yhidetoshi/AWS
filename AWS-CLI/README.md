@@ -248,7 +248,7 @@ aws autoscaling describe-scaling-activities \
 `$ aws ec2 describe-instances | jq '.Reservations[].Instances[] | {InstanceId, PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)}'`
 
 ### 作成途中のAMIがあるか確認する
-`$ aws ec2 describe-images --owners self | jq '.Images[] | {ImageId,State} | select(.State == "pending")'`
+`$ aws ec2 describe-images --owners self | jq '.Images[] | {InstanceName: (.Tags[] | select(.Key=="Name").Value) ,ImageId,State} | select(.State == "available")'`
 
 ### Cloudwatch-Alerm
 ```
