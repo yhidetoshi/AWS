@@ -244,6 +244,8 @@ aws autoscaling describe-scaling-activities \
 
 `$ aws rds describe-db-instances | jq '.DBInstances[].EngineVersion'`
 
+#### インスタンスID/PIP/インスタンス名を取得する場合
+`$ aws ec2 describe-instances | jq '.Reservations[].Instances[] | {InstanceId, PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)}'`
 
 ### Cloudwatch-Alerm
 ```
