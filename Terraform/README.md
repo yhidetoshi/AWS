@@ -310,7 +310,8 @@ $ tree .
 ├── terraform.tfstate
 ├── terraform.tfstate.backup
 ├── terraform.tfvars
-└── vpc.tf```
+└── vpc.tf
+```
 
 ### Ansible playbook(ディレクトリ構成)
 ```
