@@ -167,11 +167,24 @@ $ tree .
 .
 ├── README.md
 ├── ami.tf
+├── as-launch-config.tf
+├── autoscale-group.tf
+├── autoscale-policy.tf
+├── aws-variables.tf
 ├── cloudwatch.tf
 ├── ec2.tf
+├── elb.tf
+├── envs
+│   ├── prd
+│   │   └── variables.tf
+│   └── stg
+│       ├── main.tf
+│       └── variables.tf
+├── external
+│   └── iam
+│       └── iam_policy.json
 ├── iam.tf
 ├── kinesis.tf
-├── main.tf
 ├── main.tf.back
 ├── modules
 │   ├── ami
@@ -179,6 +192,16 @@ $ tree .
 │   │   │   ├── main.tf
 │   │   │   └── variables.tf
 │   │   └── from-snapshot
+│   │       ├── main.tf
+│   │       └── variables.tf
+│   ├── as-launch-config
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── autoscale
+│   │   ├── group
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   └── policy
 │   │       ├── main.tf
 │   │       └── variables.tf
 │   ├── cloudwatch-alarm
@@ -195,10 +218,24 @@ $ tree .
 │   │   ├── ec2.tf.back
 │   │   ├── main.tf
 │   │   └── variables.tf
-│   ├── elb-http
+│   ├── elb
 │   │   ├── main.tf
+│   │   ├── main.tf.back
 │   │   └── variables.tf
 │   ├── iam
+│   │   ├── group
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   ├── policy
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   ├── policy-attach
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   └── user
+│   │       ├── main.tf
+│   │       └── variables.tf
+│   ├── iam-old
 │   │   ├── aws_iam_group_memberships.tf.back
 │   │   ├── aws_iam_group_policies
 │   │   │   ├── group1_policy.json
@@ -215,10 +252,13 @@ $ tree .
 │   │   │   ├── outputs.tf
 │   │   │   └── variables.tf
 │   │   └── user
-│   │       ├── aws_iam_user.tf
+│   │       ├── main.tf
 │   │       ├── outputs.tf.back
 │   │       └── variables.tf
 │   ├── kinesis-stream
+│   │   ├── main.tf
+│   │   └── variables.tf
+│   ├── nat-gw
 │   │   ├── main.tf
 │   │   └── variables.tf
 │   ├── public-subnet
@@ -231,9 +271,11 @@ $ tree .
 │   │   │   ├── output.tf
 │   │   │   ├── subnet.tf
 │   │   │   └── variables.tf
-│   │   └── parameter-group
-│   │       ├── main.tf
-│   │       └── variables.tf
+│   │   ├── parameter-group
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   └── subnet
+│   │       └── main.tf.org
 │   ├── route53
 │   │   ├── main.tf
 │   │   └── variables.tf
@@ -250,20 +292,25 @@ $ tree .
 │   └── vpc
 │       ├── main.tf
 │       └── variables.tf
+├── nat-gw.tf
+├── old
+│   ├── terraform.tfstate.back
+│   ├── terraform.tfstate.back2
+│   ├── terraform.tfstate.back20171010
+│   ├── terraform.tfstate.back3
+│   └── terraform.tfstate.backup
 ├── rds.tf
 ├── route53.tf
-├── run-apply-terraform.sh
-├── run-delete-terraform.sh
-├── run-plan-terraform.sh
 ├── s3.tf
+├── sh
+│   ├── run-apply-terraform.sh
+│   ├── run-delete-terraform.sh
+│   └── run-plan-terraform.sh
 ├── sns.tf
 ├── terraform.tfstate
-├── terraform.tfstate.back
 ├── terraform.tfstate.backup
 ├── terraform.tfvars
-├── variables.tf
-└── vpc.tf
-```
+└── vpc.tf```
 
 ### Ansible playbook(ディレクトリ構成)
 ```
