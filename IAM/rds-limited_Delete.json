@@ -1,0 +1,58 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Action": [
+                "rds:*",
+                "cloudwatch:DescribeAlarms",
+                "cloudwatch:GetMetricStatistics",
+                "ec2:DescribeAccountAttributes",
+                "ec2:DescribeAvailabilityZones",
+                "ec2:DescribeInternetGateways",
+                "ec2:DescribeSecurityGroups",
+                "ec2:DescribeSubnets",
+                "ec2:DescribeVpcAttribute",
+                "ec2:DescribeVpcs",
+                "sns:ListSubscriptions",
+                "sns:ListTopics",
+                "logs:DescribeLogStreams",
+                "logs:GetLogEvents"
+            ],
+            "Effect": "Allow",
+            "Resource": "*"
+        },
+        {
+            "Action": "pi:*",
+            "Effect": "Allow",
+            "Resource": "arn:aws:pi:*:*:metrics/rds/*"
+        },
+        {
+                "Effect": "Deny",
+                "Action": [
+                "rds:DeleteDBClusterParameterGroup",
+                "rds:DeleteDBClusterSnapshot",
+                "rds:DeleteDBCluster",
+                "rds:DeleteDBInstance",
+                "rds:DeleteDBParameterGroup",
+                "rds:DeleteDBSecurityGroup",
+                "rds:DeleteDBSnapshot",
+                "rds:DeleteDBSubnetGroup",
+                "rds:DeleteEventSubscription",
+                "rds:DeleteOptionGroup",
+                "rds:RemoveSourceIdentifierFromSubscription",
+                "rds:RemoveTagsFromResource",
+                "rds:RestoreDBClusterFromSnapshot",
+                "rds:RestoreDBClusterToPointInTime",
+                "rds:RestoreDBInstanceFromDBSnapshot",
+                "rds:RestoreDBInstanceToPointInTime",
+                "rds:ResetDBClusterParameterGroup",
+                "rds:ResetDBParameterGroup",
+                "rds:RevokeDBSecurityGroupIngress",
+                "rds:FailoverDBCluster",
+                "rds:PurchaseReservedDBInstancesOffering",
+                "rds:RebootDBInstance"            
+                ],
+                "Resource": "*"
+        }
+    ]
+}
