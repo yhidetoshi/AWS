@@ -254,4 +254,19 @@ aws autoscaling describe-scaling-activities \
 ```
 aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace AWS/EC2 --metric-name CPUUtilization --dimensions "Name=InstanceId,Value={INSTANCE_ID}" --period 300 --statistic Average --threshold 80 --comparison-operator GreaterThanOrEqualToThreshold --evaluation-periods 2 --alarm-actions arn:aws:sns:ap-northeast-1:XXXXXXX:YYYYY --ok-actions arn:aws:sns:ap-northeast-1:XXXXXXX:YYYYY
 ```
+- インスタンスの情報を一部抽出する。
+  - `$ aws ec2 describe-instances | jq '.Reservations[].Instances[] | {InstanceName: (.Tags[] | select(.Key=="Name").Value) ,InstanceId, PrivateIpAddress,PublicIpAddress,InstanceType, State}'`
 
+```
+{
+  "InstanceName": "Instance-Name",
+  "InstanceId": "i-xxxxxxxxxxxxx",
+  "PrivateIpAddress": "172.31.2.13",
+  "PublicIpAddress": "X.X.X.X",
+  "InstanceType": "t2.small",
+  "State": {
+    "Code": 16,
+    "Name": "running"
+  }
+}
+```
