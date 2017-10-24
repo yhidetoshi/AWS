@@ -2,6 +2,7 @@
     "Version": "2012-10-17",
     "Statement": [
         {
+            "Effect": "Allow",
             "Action": [
                 "rds:*",
                 "cloudwatch:DescribeAlarms",
@@ -18,17 +19,16 @@
                 "logs:DescribeLogStreams",
                 "logs:GetLogEvents"
             ],
-            "Effect": "Allow",
             "Resource": "*"
         },
         {
-            "Action": "pi:*",
             "Effect": "Allow",
+            "Action": "pi:*",
             "Resource": "arn:aws:pi:*:*:metrics/rds/*"
         },
         {
-                "Effect": "Deny",
-                "Action": [
+            "Effect": "Deny",
+            "Action": [
                 "rds:Delete*",
                 "rds:Remove*",
                 "rds:Restore*",
@@ -36,9 +36,9 @@
                 "rds:RevokeDBSecurityGroupIngress",
                 "rds:FailoverDBCluster",
                 "rds:PurchaseReservedDBInstancesOffering",
-                "rds:RebootDBInstance"            
-                ],
-                "Resource": "*"
+                "rds:RebootDBInstance"
+            ],
+            "Resource": "*"
         }
     ]
 }
