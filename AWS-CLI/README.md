@@ -270,3 +270,6 @@ aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace A
   }
 }
 ```
+
+- Kinesis-streamの情報を抽出する
+  - `aws kinesis describe-stream --stream-name <STREAM-NAME> |jq '.StreamDescription |{StreamName,StreamStatus,StreamARN,RetentionPeriodHours}'`
