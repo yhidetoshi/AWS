@@ -273,4 +273,7 @@ aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace A
 
 - Kinesis-streamの情報を抽出する
   - `aws kinesis describe-stream --stream-name <STREAM-NAME> |jq '.StreamDescription |{StreamName,StreamStatus,StreamARN,RetentionPeriodHours}'`
-  - `aws kinesis describe-stream --stream-name <STREAM-NAME> |jq '.StreamDescription.StreamARN'`
+- `aws kinesis describe-stream --stream-name <STREAM-NAME> |jq '.StreamDescription.StreamARN'`
+
+- IAMポリシーの一覧を取得
+- `aws iam list-policies --scope All | jq '.Policies[]'`
