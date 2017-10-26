@@ -277,3 +277,7 @@ aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace A
 
 - IAMポリシーの一覧を取得
 - `aws iam list-policies --scope All | jq '.Policies[]'`
+
+
+- IAM-CLI jq(slectとcontainの使う)
+`aws iam list-policies --scope All | jq '.Policies[] | select (.Arn | contains("NAME"))'`
