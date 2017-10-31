@@ -281,3 +281,12 @@ aws cloudwatch put-metric-alarm --alarm-name "Hoge_CPUUtilization" --namespace A
 
 - IAM-CLI jq(slectとcontainの使う)
   - `aws iam list-policies --scope All | jq '.Policies[] | select (.Arn | contains("NAME"))'`
+
+**VPC**
+- `aws ec2 describe-vpcs --vpc-ids "vpc-xxx"`
+
+**subnet**
+- `aws ec2 describe-subnets --subnet-ids "subnet-xxx"`
+
+**Route table**
+- `aws ec2 describe-route-tables --route-table-ids "rtb-xxxx"`
