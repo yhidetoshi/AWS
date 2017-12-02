@@ -168,14 +168,17 @@ module "vpc" {
 $ tree .
 .
 ├── README.md
-├── ami.tf
-├── as-launch-config.tf
 ├── autoscale-group.tf
+├── autoscale-launch-config.tf
 ├── autoscale-policy.tf
 ├── aws-variables.tf
 ├── cloudwatch.tf
-├── ec2.tf
-├── elb.tf
+├── ec2_ami.tf
+├── ec2_elastic_ip.tf
+├── ec2_elb.tf
+├── ec2_instance.tf
+├── ec2_keyPair.tf
+├── ec2_security-group.tf
 ├── envs
 │   ├── prd
 │   │   └── variables.tf
@@ -183,11 +186,14 @@ $ tree .
 │       ├── main.tf
 │       └── variables.tf
 ├── external
+│   ├── as-launch-config
+│   │   ├── null.sh
+│   │   └── user_data.sh
 │   └── iam
 │       └── iam_policy.json
+├── iam-gropMemberShip.tf
 ├── iam.tf
 ├── kinesis.tf
-├── main.tf.back
 ├── modules
 │   ├── ami
 │   │   ├── from-instance
@@ -217,15 +223,40 @@ $ tree .
 │   │       ├── main.tf
 │   │       └── variables.tf
 │   ├── ec2
-│   │   ├── ec2.tf.back
-│   │   ├── main.tf
-│   │   └── variables.tf
+│   │   ├── attach_eip
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   ├── instance
+│   │   │   ├── ec2.tf.back
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   ├── key_pair
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   └── security-group
+│   │       ├── ci-ops
+│   │       │   ├── main.tf
+│   │       │   └── variables.tf
+│   │       ├── frontend-web
+│   │       │   ├── main.tf
+│   │       │   └── variables.tf
+│   │       ├── jump
+│   │       │   ├── main.tf
+│   │       │   └── variables.tf
+│   │       └── other
+│   │           ├── main.tf
+│   │           ├── output.tf
+│   │           └── variables.tf
+│   ├── elastic_ip
 │   ├── elb
 │   │   ├── main.tf
 │   │   ├── main.tf.back
 │   │   └── variables.tf
 │   ├── iam
 │   │   ├── group
+│   │   │   ├── main.tf
+│   │   │   └── variables.tf
+│   │   ├── group-membership
 │   │   │   ├── main.tf
 │   │   │   └── variables.tf
 │   │   ├── policy
@@ -268,25 +299,18 @@ $ tree .
 │   │   ├── outputs.tf
 │   │   └── variables.tf
 │   ├── rds
-│   │   ├── create-instance
-│   │   │   ├── main.tf
-│   │   │   ├── output.tf
-│   │   │   ├── subnet.tf
-│   │   │   └── variables.tf
-│   │   ├── parameter-group
-│   │   │   ├── main.tf
-│   │   │   └── variables.tf
-│   │   └── subnet
-│   │       └── main.tf.org
+│   │   ├── main.tf
+│   │   ├── output.tf.back
+│   │   └── variables.tf
+│   ├── rds-maz
+│   │   ├── main.tf
+│   │   ├── output.tf.back
+│   │   └── variables.tf
 │   ├── route53
 │   │   ├── main.tf
 │   │   └── variables.tf
 │   ├── s3
 │   │   ├── main.tf
-│   │   └── variables.tf
-│   ├── security-group
-│   │   ├── main.tf
-│   │   ├── output.tf
 │   │   └── variables.tf
 │   ├── sns
 │   │   ├── main.tf
@@ -295,12 +319,7 @@ $ tree .
 │       ├── main.tf
 │       └── variables.tf
 ├── nat-gw.tf
-├── old
-│   ├── terraform.tfstate.back
-│   ├── terraform.tfstate.back2
-│   ├── terraform.tfstate.back20171010
-│   ├── terraform.tfstate.back3
-│   └── terraform.tfstate.backup
+├── rds-maz.tf
 ├── rds.tf
 ├── route53.tf
 ├── s3.tf
@@ -310,7 +329,6 @@ $ tree .
 │   └── run-plan-terraform.sh
 ├── sns.tf
 ├── terraform.tfstate
-├── terraform.tfstate.backup
 ├── terraform.tfvars
 └── vpc.tf
 ```
