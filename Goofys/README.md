@@ -9,7 +9,6 @@
 # export GOPATH=$HOME/go
 # go get github.com/kahing/goofys
 # go install github.com/kahing/goofys
-# $GOPATH/bin/goofys -h
 # mkdir test-mount
 ```
 
