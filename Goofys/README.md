@@ -27,15 +27,14 @@ GOPATH=$HOME/go
 ```
 
 
-`# cat /etc/fstab`
-
+- (ex) `# cat /etc/fstab`
 ```
 LABEL=/     /           ext4    defaults,noatime  1   1
 tmpfs       /dev/shm    tmpfs   defaults        0   0
 devpts      /dev/pts    devpts  gid=5,mode=620  0   0
 sysfs       /sys        sysfs   defaults        0   0
 proc        /proc       proc    defaults        0   0
-/root/go/bin/goofys#aq-test-mount /root/test-mount fuse defaults 0  0
+/root/go/bin/goofys#aq-apiserver-mount /home/ec2-user/api/resource fuse _netdev,allow_other,--dir-mode=0775,--file-mode=0664,--uid=1000,--gid=1000 0 0
 ```
 
 ### マウントされているかを確認
