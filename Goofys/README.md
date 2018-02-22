@@ -41,10 +41,13 @@ proc        /proc       proc    defaults        0   0
 `# df -h`
 
 ```
-Filesystem      Size  Used Avail Use% Mounted on
-devtmpfs        488M   56K  488M   1% /dev
-tmpfs           498M     0  498M   0% /dev/shm
-/dev/xvda1      7.8G  1.5G  6.2G  20% /
-aq-test-mount   1.0P     0  1.0P   0% /root/test-mount
+$ df -h
+ファイルシス       サイズ  使用  残り 使用% マウント位置
+devtmpfs             484M     0  484M    0% /dev
+tmpfs                497M     0  497M    0% /dev/shm
+tmpfs                497M   13M  484M    3% /run
+tmpfs                497M     0  497M    0% /sys/fs/cgroup
+/dev/xvda1            50G  2.2G   48G    5% /
+aq-apiserver-mount   1.0P     0  1.0P    0% /home/ec2-user/api/resource
+tmpfs                100M     0  100M    0% /run/user/1000
 ```
-
