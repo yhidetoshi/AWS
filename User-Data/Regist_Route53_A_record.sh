@@ -1,6 +1,5 @@
 #!/bin/bash
 
-#!/bin/bash
 mkdir /root/.aws
 echo '[default]' >> /root/.aws/config
 echo 'output = json' >> /root/.aws/config
