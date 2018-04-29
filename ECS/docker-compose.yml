@@ -1,0 +1,43 @@
+version: '2'
+
+services:
+  test-nginx:
+    image: 123456789123.dkr.ecr.ap-northeast-1.amazonaws.com/test-nginx:latest
+    volumes:
+      - /usr/local/test-plus/nginx/log/nginx/:/var/log/nginx
+      - /usr/local/test-plus/nginx/config/:/etc/nginx/conf.d
+#      - /usr/local/test-plus/nginx/fastcgi_params/fastcgi_params:/etc/nginx/
+      - /usr/local/test-plus/nginx/fastcgi_params/fastcgi_params:/etc/nginx/fastcgi_params
+      - /usr/local/test-plus/nginx/nginx.conf:/etc/nginx/nginx.conf
+      - /usr/local/test-plus/php/paprika/:/srv/www/testplus_Admin/web
+      - /usr/local/test-plus/nginx/health_check/:/var/www/html/
+    hostname: testplus-nginx
+    links:
+      - frontend-web-dev
+    mem_limit: 1024m
+    ports:
+      - 8000:80
+
+
+  frontend-web-dev:
+    image: 123456789123.dkr.ecr.ap-northeast-1.amazonaws.com/test-paprika:latest
+    volumes:
+      - /usr/local/test-plus/php/log/php-fpm/:/var/log/php-fpm
+      - /usr/local/test-plus/php/php-fpm.d/:/etc/php-fpm.d
+      - /usr/local/test-plus/php/bin:/usr/local/bin
+      - /usr/local/test-plus/php/paprika/:/srv/www/testplus_Admin/web
+    hostname: frontend-web-dev
+    links:
+      - backend-api-dev
+    mem_limit: 1024m
+
+  backend-api-dev:
+    image: 123456789123.dkr.ecr.ap-northeast-1.amazonaws.com/test-potato:latest
+    volumes:
+      - /usr/local/test-plus/java/api/:/home/ec2-user/api
+      - /usr/local/test-plus/java/resource/:/home/ec2-user/resource
+      - /usr/local/test-plus/java/api/:/etc/init.d
+    hostname: backend-api-dev
+    mem_limit: 1024m
+    ports:
+      - 8080:8080
