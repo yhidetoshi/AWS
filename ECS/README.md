@@ -1,8 +1,5 @@
 # README
 
-ALBの配下をコンテナ化するために検証したメモです。
-
-
 ## AWSリソース
 - AutoScaling
 - 起動設定
