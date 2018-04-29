@@ -3,14 +3,14 @@
 ALBの配下をコンテナ化するために検証したメモです。
 
 
-## 構成図(ECSを利用したALB配下のコンテナ環境)
-- AWSリソース
-  - AutoScaling
-  - 起動設定
-  - ALB
-  - TargetGroup
-  - ECR
-  - ECS
+## AWSリソース
+- AutoScaling
+- 起動設定
+- ALB
+- TargetGroup
+- ECR
+- ECS
+- ※ ECSクラスターをデプロイすると、裏でCloudFormationが自動作成され、AutoScalingを作成しECS用のインスタンスがデプロイされる
 
 ## ECS-CLI(ecs-cli)インストール
 - `$ sudo curl -o /usr/local/bin/ecs-cli https://s3.amazonaws.com/amazon-ecs-cli/ecs-cli-darwin-amd64-latest`
