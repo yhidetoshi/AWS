@@ -1,0 +1,12 @@
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+hosted_zone "hoge.local." do
+  vpc "ap-northeast-1", "vpc-xxx"
+
+  rrset "hoge1.hoge.local.", "A" do
+    ttl 300
+    resource_records(
+      "10.10.0.100" 
+    )
+  end
+end
