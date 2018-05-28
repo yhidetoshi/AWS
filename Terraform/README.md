@@ -83,7 +83,8 @@ https://www.terraform.io/docs/providers/aws/index.html
    → `テンプレート化してモジュールとして使いまわすことができ、マルチクラウド環境(Azure/GCP)で利用することができるようになる`
 
 ソースコードはこちら
-https://github.com/yhidetoshi/Terraform
+https://github.com/yhidetoshi/Terraform-aws
+
 
 ## 利用しているリソースの一覧 (Sum 30 resource types)
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/Terraform-aws-fig.png)
