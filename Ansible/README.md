@@ -2,6 +2,9 @@
 
 ##　会社GitLabにPlaybookをpushしているので、ある程度まとまったら、こっちにもってきます。
 
+- Ansibleのコード
+  - https://github.com/yhidetoshi/ansible
+
 ### AnsibleをAWS環境で使う
 
 - 環境
