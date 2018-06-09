@@ -31,7 +31,6 @@ function msg(){
 # Create MySQL dump
 while :
   do
-    #/usr/bin/mysqldump -h ${ENDPOINT} --single-transaction --skip-triggers -u ${USER} -p${PASSWORD} ${DB_NAME} | gzip > ${OUTPUT_FILE}
     mysqldump -h ${ENDPOINT} --single-transaction --skip-triggers -u ${USER} -p${PASSWORD} ${DB_NAME} | gzip > ${FILE_PATH}${OUTPUT_FILE}
 
     if [ $? -eq 0 ]; then
@@ -39,7 +38,7 @@ while :
         break
 
     elif [ ${RETRY_COUNT} -lt ${RETRY_LIMIT} ]; then
-       RETRY_COUNT=`expr ${RETRY_COUNT} + 1`
+       RETRY_COUNT="$(expr ${RETRY_COUNT} + 1)"
        sleep ${RETRY_SLEEP};
 
     else
