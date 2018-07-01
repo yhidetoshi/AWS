@@ -1,18 +1,14 @@
 # Ansible
 
-##　会社GitLabにPlaybookをpushしているので、ある程度まとまったら、こっちにもってきます。
-
-- Ansibleのコード
-  - https://github.com/yhidetoshi/ansible
-
 ### AnsibleをAWS環境で使う
 
 - 環境
  - Amazon Linux AMI release 2016.09
  - ansible 2.2.1.0
- - ソースコードはAWSの鍵情報などあるのでしばらくプライベートのGitLabで管理
- 
- 
+
+- python3のインスタンスに対して実行する場合 
+ - /usr/bin/python がないとerrorになる
+ - ansible-playbook -i inventory/dev bastion.yml -C -e 'ansible_python_interpreter=/usr/bin/python3'
  
  
  
