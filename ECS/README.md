@@ -41,9 +41,9 @@ clusters:
 version: v1
 default: test-cluster
 ecs_profiles:
-  plus-stg:
-    aws_access_key_id: XXXXXXXXXXXXX
-    aws_secret_access_key: ZZZZZZZZZZZZZZZZZZZZZZZZ
+  stg:
+    aws_access_key_id: 
+    aws_secret_access_key: 
 ```
 
 -
