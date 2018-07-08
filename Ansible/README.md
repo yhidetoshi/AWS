@@ -1,5 +1,7 @@
 # Ansible
 
+- 他のAnsibleリポジトリはプライベートリポジトリで管理
+
 ### AnsibleをAWS環境で使う
 
 - 環境
