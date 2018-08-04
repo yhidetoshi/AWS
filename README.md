@@ -8,7 +8,7 @@
 - Python版(boto3)
   - https://github.com/yhidetoshi/python-awscli-tool
 - Node.js(sdk-for-node-js)
-  - 作成中
+  - https://github.com/yhidetoshi/js-awscli-tool
 
 #### CI連携部分
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terrafom-ci-slack.png)
