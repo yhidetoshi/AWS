@@ -3,11 +3,11 @@
 ### AWSのコードベース管理
 
 #### 自作CLIツール(AWS)
-- Go言語(aws-sdk-go)版
+- Go言語版(aws-sdk-go)
   - https://github.com/yhidetoshi/go-awscli-tool
 - Python版(boto3)
   - https://github.com/yhidetoshi/python-awscli-tool
-- Node.js(sdk-for-javascript)
+- Node.js版(sdk-for-javascript)
   - https://github.com/yhidetoshi/js-awscli-tool
 
 #### CI連携部分
