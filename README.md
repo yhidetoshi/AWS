@@ -10,6 +10,18 @@
 - Node.js版(sdk-for-javascript)
   - https://github.com/yhidetoshi/js-awscli-tool
 
+
+#### Jenkins連携
+- aws-sdk-goで作った自作CLIツールで、(ビルドパイプライン)
+  - AWS-AutoScalingに自動デプロイ
+  - Jenkins経由のオペレーション
+    - ELBにインスタンスをでアタッチ・デタッチ
+    - EC2/RDSインスタンスの停止・起動・削除
+    - AMI焼き・削除・ステータス取得
+    - S3のバケットサイズの合計取得/publicバケットの検知など、以下の自作コマンドを使って
+    - https://github.com/yhidetoshi/go-awscli-toolのコマンド活用
+
+
 #### CI連携部分
 ![Alt Text](https://github.com/yhidetoshi/Pictures/blob/master/Terraform/terrafom-ci-slack.png)
 
