@@ -247,6 +247,9 @@ aws autoscaling describe-scaling-activities \
 #### インスタンスID/PIP/インスタンス名を取得する場合
 `$ aws ec2 describe-instances | jq '.Reservations[].Instances[] | {InstanceId, PrivateIpAddress, InstanceName: (.Tags[] | select(.Key=="Name").Value)}'`
 
+#### instance-idからTagのKey:RoleのValueを取得する場合
+`aws ec2 --region ap-northeast-1 describe-instances | jq '.Reservations[].Instances[] | { RoleNmae: select(.InstanceId == "i-xxxxxxxxxxxxxxx") | (.Tags[] | select(.Key=="Role").Value)}' | jq '.RoleNmae'`
+
 ### 作成途中のAMIがあるか確認する
 `$ aws ec2 describe-images --owners self | jq '.Images[] | {InstanceName: (.Tags[] | select(.Key=="Name").Value) ,ImageId,State} | select(.State == "available")'`
 
